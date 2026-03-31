@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Центр Цифрового Комфорту | Експертний сервіс гаджетів з Lottie</title>
+    <title>Центр Цифрового Комфорту | Експертний сервіс гаджетів</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -36,6 +38,7 @@
         .card-shadow { box-shadow: 0 10px 30px -5px rgba(0, 102, 204, 0.05); }
         .hero-shadow { box-shadow: 0 20px 40px -10px rgba(0, 102, 204, 0.15); }
 
+        /* Кнопки с эффектом интерактивности */
         .btn-interactive {
             position: relative;
             overflow: hidden;
@@ -62,12 +65,12 @@
             box-shadow: 0 20px 40px -10px rgba(0, 102, 204, 0.1);
         }
 
-        /* Стилизация Lottie плееров */
+        /* Персонажи Lottie */
         lottie-player {
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));
             transition: transform 0.5s ease;
         }
-        lottie-player:hover { transform: scale(1.03); }
+        lottie-player:hover { transform: scale(1.05); }
 
         @keyframes pulse-green {
             0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
@@ -76,6 +79,7 @@
         }
         .pulse-btn { animation: pulse-green 2s infinite; }
         
+        /* Мобильное меню */
         #mobile-menu {
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             transform: translateX(100%);
@@ -131,8 +135,8 @@
             <button onclick="document.getElementById('locations').scrollIntoView()" class="btn-interactive border-2 border-gray-200 bg-white px-9 py-4 rounded-2xl font-semibold text-gray-700 hover:border-blue-100 w-full sm:w-auto">Локації</button>
         </div>
 
-        <div class="relative max-w-sm mx-auto" data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="1000">
-            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_m6cu9349.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
+        <div class="relative max-w-sm mx-auto" data-aos="zoom-in-up" data-aos-delay="400">
+            <lottie-player src="https://lottie.host/8046b0a1-7c91-4475-a0bc-124b82d92631/iAatfOitNq.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
         </div>
     </section>
 
@@ -144,8 +148,8 @@
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-white p-6 rounded-[32px] border border-gray-100 service-card card-shadow text-center" data-aos="fade-up" data-aos-delay="100">
-                <div class="mx-auto mb-6 bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center overflow-hidden p-3">
-                    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_v78385r4.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <div class="mx-auto mb-6 bg-blue-50 w-28 h-28 rounded-full flex items-center justify-center overflow-hidden">
+                    <lottie-player src="https://lottie.host/82544252-d336-4c4e-b5f7-6407945d8b88/15Y91C5H8j.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
                 </div>
                 <h3 class="text-xl font-bold mb-2">Смартфони</h3>
                 <p class="text-sm text-gray-500 mb-4">Перенос даних, акаунти, банкінг та безпека.</p>
@@ -153,8 +157,8 @@
             </div>
             
             <div class="bg-white p-6 rounded-[32px] border border-gray-100 service-card card-shadow text-center" data-aos="fade-up" data-aos-delay="200">
-                <div class="mx-auto mb-6 bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center overflow-hidden p-3">
-                    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_9w4m8jnp.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <div class="mx-auto mb-6 bg-blue-50 w-28 h-28 rounded-full flex items-center justify-center overflow-hidden">
+                    <lottie-player src="https://lottie.host/6d9c82a5-484d-4009-847e-75f10255c276/7W2m4G4ZfK.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
                 </div>
                 <h3 class="text-xl font-bold mb-2">Smart TV</h3>
                 <p class="text-sm text-gray-500 mb-4">IPTV, YouTube Premium, онлайн-кінотеатри.</p>
@@ -162,8 +166,8 @@
             </div>
 
             <div class="bg-white p-6 rounded-[32px] border border-gray-100 service-card card-shadow text-center" data-aos="fade-up" data-aos-delay="300">
-                <div class="mx-auto mb-6 bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center overflow-hidden p-3">
-                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_4k3m3z4u.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <div class="mx-auto mb-6 bg-blue-50 w-28 h-28 rounded-full flex items-center justify-center overflow-hidden">
+                    <lottie-player src="https://lottie.host/8682855f-1419-4876-9289-409520935515/8mNl0u2I6U.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
                 </div>
                 <h3 class="text-xl font-bold mb-2">Wi-Fi & VPN</h3>
                 <p class="text-sm text-gray-500 mb-4">Налаштування роутерів, VPN та Mesh-систем.</p>
@@ -171,8 +175,8 @@
             </div>
 
             <div class="bg-white p-6 rounded-[32px] border border-gray-100 service-card card-shadow text-center" data-aos="fade-up" data-aos-delay="400">
-                <div class="mx-auto mb-6 bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center overflow-hidden p-3">
-                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_8b1x4x1x.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <div class="mx-auto mb-6 bg-blue-50 w-28 h-28 rounded-full flex items-center justify-center overflow-hidden">
+                    <lottie-player src="https://lottie.host/481f349d-3617-4869-8f0a-661706698663/87yM4Hsh5Y.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
                 </div>
                 <h3 class="text-xl font-bold mb-2">Ноутбуки</h3>
                 <p class="text-sm text-gray-500 mb-4">Встановлення ОС Windows, софту та чистка.</p>
@@ -184,11 +188,9 @@
     <section class="mx-6 my-16 bg-[#0066cc] rounded-[40px] p-8 md:p-12 text-center text-white hero-shadow relative overflow-hidden" data-aos="zoom-in">
         <div class="absolute -top-10 -left-10 w-32 h-32 bg-blue-500 rounded-full opacity-30"></div>
         <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-blue-700 rounded-full opacity-30"></div>
-
         <div class="relative z-10">
-            <p class="uppercase text-[10px] font-bold tracking-widest mb-4 text-blue-100">- Пропозиція тижня -</p>
+            <p class="uppercase text-[10px] font-bold tracking-widest mb-4 text-blue-100">- Спеціальна пропозиція -</p>
             <h2 class="text-3xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tighter">Налаштуйте Smart TV<br>та отримайте пакет каналів у подарунок!</h2>
-            
             <div class="flex gap-4 justify-center">
                 <button onclick="window.open('https://t.me/your_bot')" class="btn-interactive pulse-btn bg-green-500 text-white px-8 md:px-10 py-4 rounded-2xl font-bold text-base md:text-lg">Забрати Подарунок</button>
             </div>
@@ -206,7 +208,7 @@
                                 <h4 class="font-bold text-lg">МегаМаркет (Нивки)</h4>
                                 <p class="text-sm text-gray-500">вул. Данила Щербаківського, 58</p>
                             </div>
-                            <span class="bg-green-100 text-green-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Вільні місця</span>
+                            <span class="bg-green-100 text-green-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Вільні місця</span>
                         </div>
                     </div>
                     <div class="blue-card p-6 border border-blue-50 card-shadow">
@@ -215,14 +217,14 @@
                                 <h4 class="font-bold text-lg">ТРЦ Retroville</h4>
                                 <p class="text-sm text-gray-500">просп. Правди, 47 (біля фудкорту)</p>
                             </div>
-                            <span class="bg-yellow-100 text-yellow-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Черга: 1 людина</span>
+                            <span class="bg-yellow-100 text-yellow-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Черга: 1 людина</span>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="lg:w-1/2 max-w-sm mx-auto" data-aos="zoom-in">
-                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_4wbsnyer.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
+                <lottie-player src="https://lottie.host/9e0018f6-281b-468e-a9d0-60b86a02f068/Z58HwI6bM6.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
             </div>
         </div>
     </section>
@@ -231,7 +233,6 @@
         <h2 class="text-3xl font-bold mb-12 tracking-tight text-center" data-aos="fade-up">Як ми працюємо</h2>
         <div class="space-y-12 relative max-w-md mx-auto">
             <div class="absolute left-6 top-0 h-full w-0.5 bg-blue-100 -z-10"></div>
-
             <div class="flex gap-6 items-start" data-aos="fade-up" data-aos-delay="100">
                 <div class="flex-shrink-0 w-12 h-12 bg-[#0066cc] rounded-2xl flex items-center justify-center text-xl font-bold text-white hero-shadow">01</div>
                 <div class="blue-card p-6 flex-grow card-shadow">
@@ -239,7 +240,6 @@
                     <p class="text-sm text-gray-600">Знайдіть наш острівець у МегаМаркеті або Retroville.</p>
                 </div>
             </div>
-            
             <div class="flex gap-6 items-start" data-aos="fade-up" data-aos-delay="200">
                 <div class="flex-shrink-0 w-12 h-12 bg-[#0066cc] rounded-2xl flex items-center justify-center text-xl font-bold text-white hero-shadow">02</div>
                 <div class="blue-card p-6 flex-grow card-shadow">
@@ -254,14 +254,12 @@
         <div class="text-center" data-aos="fade-up">
             <h2 class="text-2xl font-extrabold mb-4 tracking-tighter uppercase">Центр <span class="text-blue-400">Цифрового</span> Комфорту</h2>
             <div class="w-16 h-1.5 bg-green-500 mb-8 mx-auto rounded-full"></div>
-            <p class="text-gray-400 mb-12 max-w-sm mx-auto leading-relaxed">Технології, що служать вам. Експертний сервіс у кожному районі Києва.</p>
-            
+            <p class="text-gray-400 mb-12 max-w-sm mx-auto leading-relaxed">Технології, що служать вам. Професійний сервіс у вашому районі Києва.</p>
             <div class="flex justify-center gap-6 mb-12 text-2xl text-gray-500">
                 <a href="#" class="hover:text-[#0066cc] transition-colors"><i class="bi bi-instagram"></i></a>
                 <a href="https://t.me/your_bot" class="hover:text-[#0066cc] transition-colors"><i class="bi bi-telegram"></i></a>
                 <a href="#" class="hover:text-[#0066cc] transition-colors"><i class="bi bi-facebook"></i></a>
             </div>
-
             <div class="text-gray-600 text-[10px] uppercase tracking-widest mt-16">
                 &copy; 2026 Центр Цифрового Комфорту. Всі права захищені.
             </div>
@@ -282,10 +280,10 @@
             menu.classList.toggle('active');
             if (menu.classList.contains('active')) {
                 icon.classList.replace('bi-list', 'bi-x-lg');
-                document.body.style.overflow = 'hidden'; // Запрет скролла при открытом меню
+                document.body.style.overflow = 'hidden'; 
             } else {
                 icon.classList.replace('bi-x-lg', 'bi-list');
-                document.body.style.overflow = 'auto'; // Разрешение скролла
+                document.body.style.overflow = 'auto'; 
             }
         }
     </script>
