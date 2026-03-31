@@ -2,8 +2,8 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Центр Цифрового Комфорту | Business Model</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Центр Цифрового Комфорту | Експертна Бізнес-Модель</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -11,267 +11,243 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;600;800&display=swap');
         
-        :root {
-            --apple-blue: #0066cc;
-            --apple-dark: #1d1d1f;
-            --glass: rgba(255, 255, 255, 0.7);
-        }
-
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f5f5f7;
-            color: var(--apple-dark);
-            overflow-x: hidden;
+            font-family: 'SF Pro Display', -apple-system, sans-serif;
+            background-color: #000;
+            color: #fff;
+            scroll-behavior: smooth;
         }
 
         .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .hero-gradient {
-            background: radial-gradient(circle at center, #ffffff 0%, #f5f5f7 100%);
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-8px);
+            border-color: rgba(0, 102, 204, 0.5);
         }
 
-        .btn-apple {
-            background: var(--apple-blue);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 980px;
-            font-weight: 600;
-            transition: all 0.3s ease;
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #0066cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .btn-apple:hover {
-            opacity: 0.8;
-            transform: scale(1.02);
+        .modal-blur {
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            background: rgba(0, 0, 0, 0.8);
         }
 
-        canvas { max-width: 100% !important; }
+        .btn-glow:hover {
+            box-shadow: 0 0 25px rgba(0, 102, 204, 0.6);
+        }
+
+        /* Адаптація для мобільних */
+        @media (max-width: 640px) {
+            .hero-title { font-size: 2.8rem !important; line-height: 1.1; }
+        }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 glass-card rounded-none border-none py-4 px-6 flex justify-between items-center">
-        <div class="text-xl font-bold tracking-tight uppercase">
-            Центр <span class="text-blue-600">Цифрового</span> Комфорту
+    <nav class="fixed w-full z-[100] px-6 py-4 flex justify-between items-center bg-black/50 backdrop-blur-md border-b border-white/5">
+        <div class="text-xl font-extrabold tracking-tighter uppercase">
+            Центр <span class="text-[#0066cc]">Цифрового</span> Комфорту
         </div>
-        <div class="hidden md:flex gap-8 text-sm font-medium">
-            <a href="#model" class="hover:text-blue-600 transition">Модель</a>
-            <a href="#services" class="hover:text-blue-600 transition">Послуги</a>
-            <a href="#finance" class="hover:text-blue-600 transition">Фінанси</a>
-        </div>
+        <div class="text-[10px] uppercase tracking-widest font-bold bg-[#0066cc] px-3 py-1 rounded-full">Бизнес-План 2026</div>
     </nav>
 
-    <section class="min-h-screen hero-gradient flex flex-col justify-center items-center text-center px-6 pt-20">
-        <div data-aos="fade-up" data-aos-duration="1000">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">
-                Цифровий спокій <br><span class="text-blue-600">у кожному гаджеті.</span>
-            </h1>
-            <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-10">
-                Ми перетворюємо складні технології на комфорт. Сервісні острівці майбутнього в найкращих ТЦ України.
-            </p>
-            <div class="flex gap-4 justify-center">
-                <a href="#finance" class="btn-apple">Дивитись розрахунки</a>
-            </div>
-        </div>
-        <div class="mt-20 w-full max-w-5xl" data-aos="zoom-in" data-aos-delay="300">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" 
-                 class="rounded-[40px] shadow-2xl border-8 border-white" alt="Business Concept">
-        </div>
-    </section>
-
-    <section id="model" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-4xl font-bold tracking-tight">Бізнес-модель</h2>
-        </div>
+    <section class="relative min-h-screen flex flex-col justify-center items-center px-6 text-center pt-20 overflow-hidden">
+        <div class="absolute w-[500px] h-[500px] bg-[#0066cc] opacity-20 blur-[150px] -z-10 rounded-full"></div>
         
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass-card p-10 shadow-sm" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-6">
-                    <i class="bi bi-geo-alt-fill"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Локації</h3>
-                <p class="text-gray-500 leading-relaxed text-sm">
-                    Острівці 4-8 м² у ТЦ з високим трафіком (МегаМаркет, Retroville) поблизу продуктових якорів.
-                </p>
-            </div>
-
-            <div class="glass-card p-10 shadow-sm" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl mb-6">
-                    <i class="bi bi-shield-lock-fill"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Продукт</h3>
-                <p class="text-gray-500 leading-relaxed text-sm">
-                    Власний Messi VPN та IPTV. Висока маржа завдяки відсутності посередників у софті.
-                </p>
-            </div>
-
-            <div class="glass-card p-10 shadow-sm" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mb-6">
-                    <i class="bi bi-lightning-charge-fill"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Економіка</h3>
-                <p class="text-gray-500 leading-relaxed text-sm">
-                    Окупність точки за 1-2 місяці. Рентабельність понад 70% за рахунок інтелектуальних послуг.
-                </p>
-            </div>
+        <div data-aos="fade-up" data-aos-duration="1200">
+            <h1 class="hero-title text-5xl md:text-8xl font-extrabold tracking-tighter mb-8 gradient-text">
+                Масштабована <br>Екосистема Сервісу
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">
+                Від однієї точки до національної мережі з 60+ локацій. <br>Побудовано на високій маржі та власному софті.
+            </p>
         </div>
     </section>
 
-    <section id="services" class="py-24 bg-white px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
-                <div data-aos="fade-right">
-                    <h2 class="text-4xl font-bold tracking-tight">Послуги та Ціни</h2>
-                    <p class="text-gray-500 mt-2">Чесні ціни та прозорий сервіс.</p>
+    <section id="finance" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-16 text-center tracking-tight">Етапи Масштабування</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div onclick="openModal('month1')" class="glass-card p-8 rounded-[40px] cursor-pointer relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-6 text-3xl opacity-10 group-hover:opacity-100 transition-opacity">01</div>
+                <h3 class="text-blue-500 font-bold uppercase tracking-widest text-xs mb-4 italic">Старт та окупність</h3>
+                <div class="text-4xl font-extrabold mb-2">114 350 ₴</div>
+                <p class="text-gray-400 text-sm mb-6">Чистий прибуток за 1-й місяць</p>
+                <div class="flex items-center text-[#0066cc] font-semibold gap-2">
+                    Деталі розрахунку <i class="bi bi-arrow-right"></i>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="border border-gray-100 p-8 rounded-[30px] hover:bg-gray-50 transition">
-                    <h4 class="font-bold text-lg mb-2">Smart TV / IPTV</h4>
-                    <p class="text-blue-600 font-bold mb-4">від 500 ₴</p>
-                    <ul class="text-xs text-gray-400 space-y-2">
-                        <li>● YouTube без реклами</li>
-                        <li>● 1000+ каналів</li>
-                        <li>● Налаштування за 15 хв</li>
-                    </ul>
-                </div>
-                <div class="border border-gray-100 p-8 rounded-[30px] hover:bg-gray-50 transition">
-                    <h4 class="font-bold text-lg mb-2">Messi VPN</h4>
-                    <p class="text-blue-600 font-bold mb-4">від 400 ₴</p>
-                    <ul class="text-xs text-gray-400 space-y-2">
-                        <li>● Власна розробка</li>
-                        <li>● Безлімітна швидкість</li>
-                        <li>● Конфіденційність</li>
-                    </ul>
-                </div>
-                <div class="border border-gray-100 p-8 rounded-[30px] hover:bg-gray-50 transition">
-                    <h4 class="font-bold text-lg mb-2">Смартфони</h4>
-                    <p class="text-blue-600 font-bold mb-4">від 300 ₴</p>
-                    <ul class="text-xs text-gray-400 space-y-2">
-                        <li>● Перенос даних</li>
-                        <li>● Apple ID / Google</li>
-                        <li>● Банкінг та безпека</li>
-                    </ul>
-                </div>
-                <div class="border border-gray-100 p-8 rounded-[30px] hover:bg-gray-50 transition">
-                    <h4 class="font-bold text-lg mb-2">Ноутбуки</h4>
-                    <p class="text-blue-600 font-bold mb-4">від 600 ₴</p>
-                    <ul class="text-xs text-gray-400 space-y-2">
-                        <li>● Windows та софт</li>
-                        <li>● Чистка та прискорення</li>
-                        <li>● Видалення вірусів</li>
-                    </ul>
+            <div onclick="openModal('year1')" class="glass-card p-8 rounded-[40px] cursor-pointer relative overflow-hidden group border-blue-500/30">
+                <div class="absolute top-0 right-0 p-6 text-3xl opacity-10 group-hover:opacity-100 transition-opacity">02</div>
+                <h3 class="text-blue-500 font-bold uppercase tracking-widest text-xs mb-4 italic">Рік експлуатації</h3>
+                <div class="text-4xl font-extrabold mb-2">1.91 млн ₴</div>
+                <p class="text-gray-400 text-sm mb-6">Річний EBITDA з однієї точки</p>
+                <div class="flex items-center text-[#0066cc] font-semibold gap-2">
+                    Структура витрат <i class="bi bi-arrow-right"></i>
                 </div>
             </div>
+
+            <div onclick="openModal('year5')" class="glass-card p-8 rounded-[40px] cursor-pointer relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-6 text-3xl opacity-10 group-hover:opacity-100 transition-opacity">03</div>
+                <h3 class="text-blue-500 font-bold uppercase tracking-widest text-xs mb-4 italic">Масштаб 60 точок</h3>
+                <div class="text-4xl font-extrabold mb-2">85+ млн ₴</div>
+                <p class="text-gray-400 text-sm mb-6">Річний прибуток мережі</p>
+                <div class="flex items-center text-[#0066cc] font-semibold gap-2">
+                    LTV та Churn Rate <i class="bi bi-arrow-right"></i>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section id="finance" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold tracking-tight">Фінансовий прогноз</h2>
-                <p class="text-gray-500 mt-4">Динаміка прибутку з урахуванням LTV та Churn Rate.</p>
-            </div>
+    <div id="modalOverlay" class="fixed inset-0 z-[200] hidden modal-blur flex items-center justify-center p-4">
+        <div class="glass-card w-full max-w-2xl max-h-[90vh] overflow-y-auto p-8 relative rounded-[40px] border border-white/20">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-3xl hover:text-blue-500 transition">
+                <i class="bi bi-x-circle"></i>
+            </button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="glass-card p-8 shadow-xl" data-aos="fade-right">
-                    <canvas id="growthChart" height="250"></canvas>
-                </div>
-                
-                <div class="space-y-6" data-aos="fade-left">
-                    <div class="flex gap-6 items-start">
-                        <div class="text-blue-600 font-bold text-xl w-24">1 міс.</div>
-                        <div>
-                            <h5 class="font-bold text-lg">Запуск та окупність</h5>
-                            <p class="text-sm text-gray-500">Прибуток: ~159 000 ₴. Точка повністю окупає інвестиції ($3000) вже за перший місяць.</p>
-                        </div>
-                    </div>
-                    <hr class="border-gray-200">
-                    <div class="flex gap-6 items-start">
-                        <div class="text-blue-600 font-bold text-xl w-24">6 міс.</div>
-                        <div>
-                            <h5 class="font-bold text-lg">Стабілізація бази</h5>
-                            <p class="text-sm text-gray-500">Зростання частки абонплат. Формування постійної бази клієнтів IPTV та VPN.</p>
-                        </div>
-                    </div>
-                    <hr class="border-gray-200">
-                    <div class="flex gap-6 items-start">
-                        <div class="text-blue-600 font-bold text-xl w-24">1 рік</div>
-                        <div>
-                            <h5 class="font-bold text-lg">1.9 млн ₴ / рік з точки</h5>
-                            <p class="text-sm text-gray-500">Чистий прибуток після всіх витрат (оренда, зарплати, закупка контенту).</p>
-                        </div>
-                    </div>
-                    <hr class="border-gray-200">
-                    <div class="flex gap-6 items-start">
-                        <div class="text-blue-600 font-bold text-xl w-24">3-5 років</div>
-                        <div>
-                            <h5 class="font-bold text-lg">Масштабування: 60+ точок</h5>
-                            <p class="text-sm text-gray-500">Перехід на пасивний дохід від підписок. Річний прибуток мережі: 80-90 млн ₴.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="glass-card p-10 rounded-[50px]">
+            <h3 class="text-2xl font-bold mb-8 text-center">Прогноз росту капіталізації</h3>
+            <canvas id="mainChart"></canvas>
         </div>
     </section>
 
-    <footer class="bg-white py-16 px-6 border-t border-gray-100">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-sm text-gray-400">
-                &copy; 2026 Центр Цифрового Комфорту. Всі права захищені.
-            </div>
-            <div class="flex gap-6 text-xl text-gray-400">
-                <a href="#" class="hover:text-blue-600 transition"><i class="bi bi-telegram"></i></a>
-                <a href="#" class="hover:text-blue-600 transition"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="hover:text-blue-600 transition"><i class="bi bi-linkedin"></i></a>
-            </div>
-        </div>
+    <footer class="py-20 text-center border-t border-white/5">
+        <div class="text-gray-500 text-xs uppercase tracking-[0.3em]">&copy; 2026 Center of Digital Comfort</div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
 
-        // Chart configuration
-        const ctx = document.getElementById('growthChart').getContext('2d');
+        const data = {
+            month1: {
+                title: "Статистика за 1 місяць",
+                content: `
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white/5 p-4 rounded-2xl">
+                                <span class="text-xs text-gray-400 uppercase">Валовий дохід</span>
+                                <div class="text-xl font-bold">172 350 ₴</div>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-2xl">
+                                <span class="text-xs text-gray-400 uppercase">Витрати</span>
+                                <div class="text-xl font-bold text-red-400">-58 000 ₴</div>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-blue-500">Деталізація:</h4>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex justify-between"><span>Оренда ТЦ:</span> <span>20 000 ₴</span></li>
+                            <li class="flex justify-between"><span>ЗП Майстра (ставка + %):</span> <span>30 000 ₴</span></li>
+                            <li class="flex justify-between"><span>Податки та маркетинг:</span> <span>8 000 ₴</span></li>
+                        </ul>
+                        <div class="p-4 border-l-4 border-blue-600 bg-blue-600/10">
+                            <p class="text-sm italic">"При вартості запуску точки $3000, окупність досягається вже на 35-й день роботи за умови трафіку 10 люд/день."</p>
+                        </div>
+                    </div>
+                `
+            },
+            year1: {
+                title: "Показники за 1 рік (1 точка)",
+                content: `
+                    <div class="space-y-6">
+                        <div class="text-center bg-blue-600/20 p-6 rounded-3xl border border-blue-500/30">
+                            <span class="text-xs uppercase tracking-tighter">Річний EBITDA</span>
+                            <div class="text-4xl font-black">1 912 200 ₴</div>
+                        </div>
+                        <h4 class="font-bold">Джерела доходу:</h4>
+                        <div class="grid grid-cols-1 gap-2 text-sm">
+                            <div class="flex justify-between p-3 bg-white/5 rounded-xl"><span>IPTV (Smart TV):</span> <span class="font-bold">1.17 млн ₴</span></div>
+                            <div class="flex justify-between p-3 bg-white/5 rounded-xl"><span>Messi VPN (власний):</span> <span class="font-bold">0.89 млн ₴</span></div>
+                            <div class="flex justify-between p-3 bg-white/5 rounded-xl"><span>Смартфони та Пк:</span> <span class="font-bold">0.54 млн ₴</span></div>
+                        </div>
+                        <p class="text-xs text-gray-400">Розраховано з урахуванням Churn Rate 15% на послуги підписки.</p>
+                    </div>
+                `
+            },
+            year5: {
+                title: "Стратегія 5 років (Мережа)",
+                content: `
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="text-5xl font-bold text-blue-500">60+</div>
+                            <div class="text-sm font-semibold uppercase leading-tight">Точок <br>по Україні</div>
+                        </div>
+                        <p class="text-gray-300">На 5-й рік бізнес переходить у фазу пасивного доходу від абонплат.</p>
+                        <div class="space-y-4">
+                            <div class="bg-white/5 p-4 rounded-2xl">
+                                <h5 class="text-xs text-blue-400 uppercase font-bold mb-1">База активних підписок</h5>
+                                <div class="text-2xl font-bold">120 000+ клієнтів</div>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-2xl">
+                                <h5 class="text-xs text-green-400 uppercase font-bold mb-1">Річний прибуток мережі</h5>
+                                <div class="text-2xl font-bold">85 000 000 ₴+</div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        function openModal(id) {
+            const content = data[id];
+            document.getElementById('modalContent').innerHTML = `
+                <h2 class="text-3xl font-bold mb-8 pr-8">${content.title}</h2>
+                ${content.content}
+            `;
+            document.getElementById('modalOverlay').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Графік
+        const ctx = document.getElementById('mainChart').getContext('2d');
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['1 міс', '6 міс', '1 рік', '3 роки', '5 років'],
+                labels: ['Місяць 1', 'Рік 1', 'Рік 3', 'Рік 5'],
                 datasets: [{
-                    label: 'Чистий прибуток мережі (млн ₴)',
-                    data: [0.16, 1.2, 1.9, 28, 85],
+                    label: 'Прибуток (млн ₴)',
+                    data: [0.11, 1.9, 32, 85],
                     borderColor: '#0066cc',
-                    backgroundColor: 'rgba(0, 102, 204, 0.1)',
                     borderWidth: 4,
-                    fill: true,
+                    pointBackgroundColor: '#0066cc',
+                    pointRadius: 8,
                     tension: 0.4,
-                    pointRadius: 6,
-                    pointBackgroundColor: '#fff',
-                    pointBorderWidth: 3
+                    fill: true,
+                    backgroundColor: 'rgba(0, 102, 204, 0.1)'
                 }]
             },
             options: {
                 responsive: true,
-                plugins: {
-                    legend: { display: false }
-                },
+                plugins: { legend: { display: false } },
                 scales: {
-                    y: {
-                        beginAtZero: true,
-                        grid: { color: '#f0f0f0' }
-                    },
-                    x: {
-                        grid: { display: false }
-                    }
+                    y: { ticks: { color: '#666' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                    x: { ticks: { color: '#666' }, grid: { display: false } }
                 }
             }
         });
