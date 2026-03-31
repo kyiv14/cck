@@ -1,338 +1,223 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ЦЕНТР ЦИФРОВОГО КОМФОРТУ | 3D Tech Service</title>
-    
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2092/2092663.png">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftC Company - Системные решения</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --soft-blue: #F0F7FF; /* Фоновий колір секцій */
-            --brand-blue: #007AFF; /* Фірмовий синій */
-            --brand-light: #E1EFFF;
-            --text-dark: #1A1D23;
-            --text-gray: #677489;
-            --white: #ffffff;
-            --radius-lg: 40px;
-            --radius-md: 24px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --primary-blue: #2563eb;
+            --light-blue: #eff6ff;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --bg-gradient: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%);
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--white);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
             color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        /* --- Навігація --- */
-        .navbar {
-            padding: 20px 0;
-            background: rgba(255, 255, 255, 0.8) !important;
-            backdrop-filter: blur(20px);
-        }
-
-        .navbar-brand {
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: var(--brand-blue) !important;
-            letter-spacing: -0.02em;
-        }
-
-        .btn-contact {
-            background: var(--brand-blue);
-            color: white;
-            border-radius: 50px;
-            padding: 10px 24px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border: none;
-            transition: var(--transition);
-        }
-
-        .btn-contact:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 122, 255, 0.2);
-            color: white;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            padding: 120px 0 80px;
-            background: var(--white);
-            position: relative;
-        }
-
-        .hero-content h1 {
-            font-weight: 800;
-            font-size: calc(2.2rem + 2vw);
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -0.03em;
-        }
-
-        .hero-content h1 span {
-            color: var(--brand-blue);
-        }
-
-        .hero-content p {
-            color: var(--text-gray);
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-            max-width: 500px;
-        }
-
-        .hero-image {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .btn-get-started {
-            background: var(--brand-blue);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            transition: var(--transition);
-        }
-
-        .btn-get-started:hover {
-            background: #0063D1;
-            transform: translateY(-3px);
-            color: white;
-        }
-
-        /* --- Services Grid (Waves & Rounded) --- */
-        .services-section {
-            background: var(--soft-blue);
-            padding: 100px 0;
-            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-            position: relative;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: var(--radius-md);
-            padding: 40px 30px;
-            text-align: center;
-            border: none;
-            transition: var(--transition);
-            height: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0, 122, 255, 0.1);
-        }
-
-        .icon-wrapper {
-            width: 70px;
-            height: 70px;
-            background: var(--soft-blue);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 28px;
-            color: var(--brand-blue);
-        }
-
-        .service-card h4 {
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-        }
-
-        .service-card p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
+            background: var(--bg-gradient);
             line-height: 1.6;
         }
 
-        /* --- Story Section --- */
-        .story-section {
-            padding: 100px 0;
-            background: var(--white);
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: white;
         }
 
-        .feature-item {
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--text-dark);
+        }
+
+        .logo span { color: var(--primary-blue); }
+
+        .nav-links a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: var(--text-gray);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary-blue); }
+
+        /* Hero Section */
+        .hero {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            padding: 80px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-content { flex: 1; }
+
+        .hero-content h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-content h1 span { color: var(--primary-blue); }
+
+        .hero-content p {
+            color: var(--text-gray);
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .badge {
+            background: #dcfce7;
+            color: #166534;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
             margin-bottom: 20px;
         }
 
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--brand-light);
-            border-radius: 14px;
+        .btn {
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+            margin-right: 15px;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            border: 1px solid #e5e7eb;
+            color: var(--text-dark);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 30px;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 50px 10%;
+            background: #f8fafc;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: left;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover { transform: translateY(-5px); }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin: 15px 0 10px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            background: var(--light-blue);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--brand-blue);
-            margin-right: 16px;
-            font-size: 20px;
-        }
-
-        /* --- Footer --- */
-        footer {
-            padding: 80px 0 40px;
-            background: var(--soft-blue);
-            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-            text-align: center;
-        }
-
-        .footer-logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--brand-blue);
-            margin-bottom: 20px;
-            display: block;
-            text-decoration: none;
+            color: var(--primary-blue);
         }
 
         @media (max-width: 768px) {
-            .hero { padding-top: 100px; text-align: center; }
-            .hero-content p { margin: 0 auto 40px; }
+            .hero { flex-direction: column; text-align: center; }
+            .hero-content p { margin: 0 auto 30px; }
             .hero-image { margin-top: 50px; }
-            .services-section { border-radius: 30px 30px 0 0; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">ЦЕНТР ЦИФРОВОГО КОМФОРТУ</a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="bi bi-list fs-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center pt-3 pt-lg-0">
-                    <li class="nav-item"><a class="nav-link px-3" href="#services">Послуги</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#locations">Локації</a></li>
-                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                        <a class="btn-contact" href="https://t.me/your_bot">КОНСУЛЬТАЦІЯ</a>
-                    </li>
-                </ul>
-            </div>
+    <nav>
+        <div class="logo">Soft<span>C</span> Company</div>
+        <div class="nav-links">
+            <a href="#">О нас</a>
+            <a href="#">Услуги</a>
+            <a href="#">Проекты</a>
+            <a href="#">Контакты</a>
         </div>
     </nav>
 
     <section class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content">
-                    <h1>Рішення, що дарують <span>Комфорт</span></h1>
-                    <p>Ми перетворюємо складні технології на простих помічників. Налаштування смартфонів, TV та мереж у вашому ритмі життя.</p>
-                    <a href="#services" class="btn-get-started shadow-sm">Почати зараз</a>
-                </div>
-                <div class="col-lg-6 hero-image text-center">
-                    <img src="https://ouch-cdn2.icons8.com/mYm3I9mK1F-K5Qp7W6D-Y7_jA9YvL_n6fS0pZ0t8w4A/rs:fit:456:456/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvODg3/L2RiMmM0YmNlLTU4/ZTQtNDM3Zi04YmI5/LWUyM2M0MGVmN2Ri/Ni5wbmc" alt="3D Illustration">
-                </div>
+        <div class="hero-content">
+            <div class="badge">150+ ПРОЕКТОВ • 24/7 ПОДДЕРЖКА</div>
+            <h1>Решения, которые ускоряют <span>Рост</span></h1>
+            <p>Мы создаем масштабируемые цифровые решения, которые помогают компаниям внедрять инновации и расти быстрее.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Начать работу</a>
+                <a href="#" class="btn btn-secondary">Подробнее</a>
             </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://img.freepik.com/free-vector/floating-robot-abstract-background_23-2148247413.jpg" alt="3D Illustration">
         </div>
     </section>
 
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-800 display-6">Наші сервіси</h2>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card shadow-sm">
-                        <div class="icon-wrapper"><i class="bi bi-phone"></i></div>
-                        <h4>Смартфони</h4>
-                        <p>Налаштування акаунтів, перенос даних та захист ваших пристроїв.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card shadow-sm">
-                        <div class="icon-wrapper"><i class="bi bi-tv"></i></div>
-                        <h4>Smart TV</h4>
-                        <p>Кінотеатри, канали та IPTV. Насолоджуйтесь контентом без меж.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card shadow-sm">
-                        <div class="icon-wrapper"><i class="bi bi-shield-lock"></i></div>
-                        <h4>Безпека</h4>
-                        <p>VPN, двофакторна автентифікація та захист ваших даних.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card shadow-sm">
-                        <div class="icon-wrapper"><i class="bi bi-wifi"></i></div>
-                        <h4>Мережі</h4>
-                        <p>Швидкий інтернет у кожному куточку дому з Wi-Fi 7 та Mesh.</p>
-                    </div>
-                </div>
-            </div>
+    <section class="features">
+        <div class="feature-card">
+            <div class="icon-box">★</div>
+            <h3>Ответственность</h3>
+            <p>Мы гарантируем высокое качество на каждом этапе разработки.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon-box">👤</div>
+            <h3>Профессионализм</h3>
+            <p>Наша команда экспертов всегда на связи с вами.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon-box">⚡</div>
+            <h3>Эффективность</h3>
+            <p>Agile-методы позволяют нам сдавать проекты точно в срок.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon-box">🌐</div>
+            <h3>Коммуникация</h3>
+            <p>Прозрачность и открытость в общении с клиентом.</p>
         </div>
     </section>
 
-    <section class="story-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 d-none d-lg-block">
-                    <img src="https://ouch-cdn2.icons8.com/5JmO6nLzZJ8vS-Y9rK-uP6qQY8O-D1-p8-i-N6-u-u8/rs:fit:456:456/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvODg3/L2RiMmM0YmNlLTU4/ZTQtNDM3Zi04YmI5/LWUyM2M0MGVmN2Ri/Ni5wbmc" alt="Values Illustration" class="img-fluid" style="transform: scaleX(-1);">
-                </div>
-                <div class="col-lg-6 ps-lg-5">
-                    <h2 class="fw-800 mb-4">Наші цінності</h2>
-                    <p class="text-gray mb-4">Ми створюємо цифровий комфорт, щоб ви могли зосередитись на важливому.</p>
-                    
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="bi bi-clock"></i></div>
-                        <div>
-                            <h6 class="fw-700 mb-0">Економія часу</h6>
-                            <p class="text-gray small mb-0">Більшість налаштувань займають до 15 хвилин.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="bi bi-chat-dots"></i></div>
-                        <div>
-                            <h6 class="fw-700 mb-0">Мистецтво спілкування</h6>
-                            <p class="text-gray small mb-0">Пояснюємо складне простою мовою.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <a href="#" class="footer-logo">ЦЕНТР ЦИФРОВОГО КОМФОРТУ</a>
-            <p class="text-gray mb-4">Ваш надійний провідник у світі сучасних технологій.</p>
-            <div class="d-flex justify-content-center gap-3 mb-5">
-                <a href="#" class="text-brand-blue fs-4"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="text-brand-blue fs-4"><i class="bi bi-telegram"></i></a>
-            </div>
-            <p class="text-gray small mb-0">© 2026 Всі права захищені.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
