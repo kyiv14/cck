@@ -53,7 +53,7 @@
             box-shadow: 0 20px 40px -10px rgba(0, 102, 204, 0.1);
         }
 
-        /* Анімація персонажів */
+        /* Стилі для плеєра анімацій */
         lottie-player {
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));
             transition: transform 0.5s ease;
@@ -82,14 +82,16 @@
 
     <header class="flex justify-between items-center px-6 py-4 bg-white sticky top-0 z-[100] shadow-sm">
         <div class="text-xl md:text-2xl font-extrabold flex items-center tracking-tight uppercase cursor-pointer" onclick="window.scrollTo(0,0)">
-            Центр <span class="text-[#0066cc] ml-1">Цифрового</span> <span class="text-[#0066cc] ml-1">Комфорту</span>
+            <span class="text-gray-900">Центр</span> 
+            <span class="text-[#0066cc] ml-1">Цифрового</span> 
+            <span class="text-[#0066cc] ml-1">Комфорту</span>
         </div>
         <div class="hidden md:flex gap-8 font-semibold text-gray-600">
             <a href="#services" class="hover:text-[#0066cc] transition-colors">Послуги</a>
             <a href="#locations" class="hover:text-[#0066cc] transition-colors">Локації</a>
             <a href="#process" class="hover:text-[#0066cc] transition-colors">Процес</a>
         </div>
-        <button onclick="toggleMenu()" class="text-3xl text-gray-600 hover:text-[#0066cc] focus:outline-none">
+        <button onclick="toggleMenu()" class="text-3xl text-gray-600 focus:outline-none">
             <i class="bi bi-list" id="menu-icon"></i>
         </button>
     </header>
@@ -185,7 +187,7 @@
     </section>
 
     <footer class="bg-gray-950 text-white px-6 py-16 text-center">
-        <h2 class="text-2xl font-extrabold uppercase mb-4">Центр <span class="text-blue-400">Цифрового</span> Комфорту</h2>
+        <h2 class="text-2xl font-extrabold uppercase mb-4">Центр <span class="text-blue-400">Цифрового</span> <span class="text-blue-400">Комфорту</span></h2>
         <p class="text-gray-400 text-sm">© 2026 Центр Цифрового Комфорту. Всі права захищені.</p>
     </footer>
 
