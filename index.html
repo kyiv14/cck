@@ -3,238 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ЦЕНТР ЦИФРОВОГО КОМФОРТУ | Експертний сервіс гаджетів</title>
+    <title>ЦЕНТР ЦИФРОВОГО КОМФОРТУ | Експертний сервіс</title>
     
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2092/2092663.png">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
         :root {
             --bg-color: #FFFFFF;
             --text-main: #1D1D1F;
-            --text-muted: #86868B;
-            --accent-blue: #0056D2; /* Глибокий корпоративний синій */
-            --light-blue: #E8F0FE;
-            --card-shadow: 0 12px 40px rgba(0,0,0,0.03);
-            --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --text-muted: #6E6E73;
+            --accent-blue: #0066CC;
+            --light-gray: #F5F5F7;
         }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        /* --- Логотип та Навігація --- */
+        /* --- Навігація --- */
         .navbar {
             background: rgba(255, 255, 255, 0.8) !important;
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0,0,0,0.04);
-            padding: 18px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 12px 0;
         }
 
-        .logo-text {
+        .navbar-brand {
             font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #002D72 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-dot {
-            height: 6px;
-            width: 6px;
-            background-color: var(--accent-blue);
-            border-radius: 50%;
-            margin-left: 4px;
-            display: inline-block;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            color: var(--text-main) !important;
             font-size: 0.9rem;
-            transition: var(--transition);
+            color: var(--accent-blue) !important;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: normal;
+            max-width: 180px;
         }
 
-        .nav-link:hover { color: var(--accent-blue) !important; }
+        .navbar-toggler { border: none; padding: 0; }
+        .navbar-toggler:focus { box-shadow: none; }
 
-        /* --- Hero Section --- */
+        /* --- Hero --- */
         .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 100px;
-            background: radial-gradient(circle at top right, rgba(0, 86, 210, 0.03), transparent);
+            padding: 120px 0 60px;
+            text-align: center;
         }
 
         .hero h1 {
             font-weight: 800;
-            font-size: calc(2.5rem + 2vw);
-            letter-spacing: -0.05em;
-            line-height: 1;
-            margin-bottom: 30px;
+            font-size: calc(1.8rem + 1.5vw);
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
         }
 
         .hero p.lead {
+            font-size: 1.1rem;
             color: var(--text-muted);
             max-width: 600px;
-            margin: 0 auto 40px;
-            font-weight: 300;
+            margin: 0 auto 30px;
         }
 
-        /* Зменшена кнопка (-30%) */
-        .btn-main {
+        .btn-primary-custom {
             background-color: var(--accent-blue);
             color: white;
-            font-weight: 600;
             border-radius: 50px;
-            padding: 14px 28px; /* Зменшено відступи */
-            font-size: 0.9rem;   /* Зменшено шрифт */
+            padding: 12px 24px;
+            font-weight: 600;
+            font-size: 0.9rem;
             border: none;
-            transition: var(--transition);
-            box-shadow: 0 10px 20px rgba(0, 86, 210, 0.15);
+            text-decoration: none;
+            transition: 0.3s;
         }
 
-        .btn-main:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(0, 86, 210, 0.25);
+        .btn-primary-custom:hover {
+            opacity: 0.9;
             color: white;
         }
 
-        /* --- Оновлені Картки Послуг --- */
-        #services { padding: 120px 0; }
+        /* --- Нові Картки Послуг --- */
+        .section-padding { padding: 60px 0; }
 
-        .service-card {
-            background: #FFFFFF;
-            border-radius: 32px;
-            padding: 50px 30px;
-            height: 100%;
-            text-align: center; /* Центрування контенту */
-            transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.03);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .service-card:hover {
-            transform: scale(1.03);
-            box-shadow: var(--card-shadow);
-            border-color: var(--light-blue);
-        }
-
-        .icon-wrapper {
-            width: 80px;
-            height: 80px;
-            background-color: var(--light-blue);
+        .card-service {
+            background: var(--light-gray);
             border-radius: 24px;
+            padding: 32px 24px;
+            height: 100%;
+            text-align: center;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .card-service:hover {
+            background: #E8E8ED;
+        }
+
+        .icon-circle {
+            width: 64px;
+            height: 64px;
+            background: white;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 30px;
+            margin: 0 auto 20px;
+            font-size: 24px;
             color: var(--accent-blue);
-            font-size: 32px;
-            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
 
-        .service-card:hover .icon-wrapper {
-            background-color: var(--accent-blue);
-            color: white;
-            transform: rotate(-5deg);
-        }
-
-        .service-card h4 {
+        .card-service h3 {
+            font-size: 1.25rem;
             font-weight: 700;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            letter-spacing: -0.02em;
+            margin-bottom: 16px;
         }
 
         .service-list {
             list-style: none;
             padding: 0;
-            margin: 0 0 25px 0;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 300;
-            line-height: 1.8;
-        }
-
-        .service-list li i {
-            color: var(--accent-blue);
-            font-size: 0.8rem;
-            margin-right: 5px;
-        }
-
-        .price-tag {
-            font-weight: 700;
-            color: var(--accent-blue);
-            font-size: 1.1rem;
-            margin-top: auto;
-            padding: 8px 20px;
-            background: var(--light-blue);
-            border-radius: 50px;
-        }
-
-        /* --- Локації (Без карти) --- */
-        #locations {
-            padding: 100px 0;
-            background-color: #FBFBFF;
-            border-radius: 60px 60px 0 0;
-        }
-
-        .location-box {
-            background: white;
-            padding: 40px;
-            border-radius: 30px;
-            border: 1px solid rgba(0,0,0,0.02);
+            margin-bottom: 24px;
             text-align: center;
-            transition: var(--transition);
         }
 
-        .location-box:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        .service-list li {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
         }
 
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 16px;
+        .card-price {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            display: block;
+        }
+
+        /* --- Локації --- */
+        .location-tile {
+            background: white;
+            border: 1px solid #E5E5E7;
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .badge-status {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 12px;
             border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 15px;
         }
 
-        .status-online { background: #E7F9ED; color: #28A745; }
-        .status-waiting { background: #FFF4E5; color: #FF9500; }
+        .status-green { background: #E7F9ED; color: #1D813B; }
+        .status-orange { background: #FFF4E5; color: #B26B00; }
 
         footer {
-            padding: 60px 0;
+            padding: 40px 0;
+            border-top: 1px solid #E5E5E7;
             text-align: center;
-            border-top: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.8rem;
+            color: var(--text-muted);
         }
 
         @media (max-width: 768px) {
-            .hero { text-align: center; padding-top: 80px; }
-            .service-card { padding: 40px 20px; }
+            .navbar-brand { font-size: 0.8rem; }
+            .hero { padding-top: 100px; }
+            .hero h1 { font-size: 2rem; }
+            .card-service { padding: 24px 16px; }
         }
     </style>
 </head>
@@ -242,126 +184,108 @@
 
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand logo-text" href="#">
-                ЦЕНТР ЦИФРОВОГО КОМФОРТУ<span class="logo-dot"></span>
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="#">Центр Цифрового Комфорту</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <i class="bi bi-list fs-2"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link px-3" href="#services">Послуги</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#locations">Локації</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="btn-main" style="padding: 10px 20px; font-size: 0.8rem;" href="https://t.me/your_bot">Консультація</a>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-center pt-3 pt-lg-0">
+                    <li class="nav-item"><a class="nav-link px-3 py-2" href="#services">Послуги</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 py-2" href="#locations">Локації</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a class="btn-primary-custom" href="https://t.me/your_bot">Консультація</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="container text-center">
-            <div data-aos="fade-up">
-                <h1 class="mx-auto" style="max-width: 900px;">Ваша техніка має приносити <span>задоволення</span></h1>
-                <p class="lead">Ми налаштовуємо ваш цифровий світ професійно, швидко та з турботою про ваш спокій.</p>
-                <div class="d-flex justify-content-center gap-3 mt-2">
-                    <a href="#services" class="btn-main">Послуги</a>
-                    <a href="#locations" class="btn btn-link text-decoration-none text-dark fw-600">Наші точки <i class="bi bi-arrow-right"></i></a>
-                </div>
+    <header class="hero">
+        <div class="container">
+            <h1>Технології мають<br>дарувати комфорт</h1>
+            <p class="lead">Професійне налаштування смартфонів, TV та мереж за 15 хвилин.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#services" class="btn-primary-custom" style="padding: 10px 20px; font-size: 0.8rem;">Послуги</a>
+                <a href="#locations" class="btn btn-link text-decoration-none text-dark fw-600 p-0 align-self-center">Локації →</a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section id="services">
+    <section id="services" class="section-padding bg-white">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="fw-800 display-5 letter-spacing-tight">Експертні рішення</h2>
-                <p class="text-muted">Оберіть категорію допомоги, яка вам необхідна сьогодні</p>
-            </div>
-            
-            <div class="row g-4 pt-4">
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <div class="icon-wrapper"><i class="bi bi-phone"></i></div>
-                        <h4>Смартфони</h4>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-service">
+                        <div class="icon-circle"><i class="bi bi-phone"></i></div>
+                        <h3>Смартфони</h3>
                         <ul class="service-list">
-                            <li><i class="bi bi-check2"></i> Перенос даних</li>
-                            <li><i class="bi bi-check2"></i> Apple ID / Google</li>
-                            <li><i class="bi bi-check2"></i> Налаштування безпеки</li>
-                            <li><i class="bi bi-check2"></i> Встановлення банкінгу</li>
+                            <li>Перенос даних</li>
+                            <li>Apple / Google ID</li>
+                            <li>Безпека</li>
+                            <li>Банкінг</li>
                         </ul>
-                        <div class="price-tag">від 300 ₴</div>
+                        <span class="card-price">від 300 ₴</span>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <div class="icon-wrapper"><i class="bi bi-tv"></i></div>
-                        <h4>Smart TV</h4>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-service">
+                        <div class="icon-circle"><i class="bi bi-tv"></i></div>
+                        <h3>Smart TV</h3>
                         <ul class="service-list">
-                            <li><i class="bi bi-check2"></i> Налаштування IPTV</li>
-                            <li><i class="bi bi-check2"></i> YouTube без реклами</li>
-                            <li><i class="bi bi-check2"></i> Онлайн-кінотеатри</li>
-                            <li><i class="bi bi-check2"></i> Оптимізація системи</li>
+                            <li>IPTV канали</li>
+                            <li>YouTube Premium</li>
+                            <li>Кінотеатри</li>
+                            <li>Оптимізація</li>
                         </ul>
-                        <div class="price-tag">від 500 ₴</div>
+                        <span class="card-price">від 500 ₴</span>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <div class="icon-wrapper"><i class="bi bi-wifi"></i></div>
-                        <h4>Мережі</h4>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-service">
+                        <div class="icon-circle"><i class="bi bi-router"></i></div>
+                        <h3>Мережі</h3>
                         <ul class="service-list">
-                            <li><i class="bi bi-check2"></i> VPN на роутер</li>
-                            <li><i class="bi bi-check2"></i> Налаштування Wi-Fi</li>
-                            <li><i class="bi bi-check2"></i> Батьківський контроль</li>
-                            <li><i class="bi bi-check2"></i> Mesh-системи</li>
+                            <li>VPN на роутер</li>
+                            <li>Налаштування Wi-Fi</li>
+                            <li>Mesh-системи</li>
+                            <li>Безпека мережі</li>
                         </ul>
-                        <div class="price-tag">від 400 ₴</div>
+                        <span class="card-price">від 400 ₴</span>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card">
-                        <div class="icon-wrapper"><i class="bi bi-laptop"></i></div>
-                        <h4>Windows</h4>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-service">
+                        <div class="icon-circle"><i class="bi bi-laptop"></i></div>
+                        <h3>Windows</h3>
                         <ul class="service-list">
-                            <li><i class="bi bi-check2"></i> Встановлення ОС</li>
-                            <li><i class="bi bi-check2"></i> Чистка від вірусів</li>
-                            <li><i class="bi bi-check2"></i> Оптимізація швидкості</li>
-                            <li><i class="bi bi-check2"></i> Робота з драйверами</li>
+                            <li>Встановлення ОС</li>
+                            <li>Драйвери</li>
+                            <li>Чистка від вірусів</li>
+                            <li>Прискорення</li>
                         </ul>
-                        <div class="price-tag">від 600 ₴</div>
+                        <span class="card-price">від 600 ₴</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="locations">
+    <section id="locations" class="section-padding bg-light">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="fw-800">Ми завжди поруч</h2>
-                <p class="text-muted">Завітайте до нас у найближчий зручний час</p>
-            </div>
-            
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-5" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="location-box">
-                        <i class="bi bi-geo-alt-fill fs-2 text-primary mb-3 d-block"></i>
-                        <h5>МегаМаркет (Нивки)</h5>
-                        <p class="mb-0">вул. Данила Щербаківського, 58</p>
-                        <div class="status-badge status-online">Зараз вільно</div>
+            <h2 class="text-center fw-800 mb-5">Наші точки</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="location-tile">
+                        <h5 class="fw-bold mb-1">МегаМаркет (Нивки)</h5>
+                        <p class="small text-muted mb-3">вул. Данила Щербаківського, 58</p>
+                        <span class="badge-status status-green">Вільні місця</span>
                     </div>
                 </div>
-                <div class="col-md-5" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="location-box">
-                        <i class="bi bi-geo-alt-fill fs-2 text-primary mb-3 d-block"></i>
-                        <h5>ТРЦ Retroville</h5>
-                        <p class="mb-0">просп. Правди, 47 (біля фудкорту)</p>
-                        <div class="status-badge status-waiting">Черга: 1 людина</div>
+                <div class="col-md-5">
+                    <div class="location-tile">
+                        <h5 class="fw-bold mb-1">ТРЦ Retroville</h5>
+                        <p class="small text-muted mb-3">просп. Правди, 47</p>
+                        <span class="badge-status status-orange">Черга: 1 людина</span>
                     </div>
                 </div>
             </div>
@@ -370,19 +294,11 @@
 
     <footer>
         <div class="container">
-            <h5 class="fw-800 logo-text d-inline-block">ЦЕНТР ЦИФРОВОГО КОМФОРТУ<span class="logo-dot"></span></h5>
-            <p class="small text-muted mt-3">Ваш провідник у світі технологій. © 2026</p>
-            <div class="d-flex justify-content-center gap-3 mt-4">
-                <a href="#" class="text-dark fs-5"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="text-dark fs-5"><i class="bi bi-telegram"></i></a>
-            </div>
+            <p class="fw-700 text-dark mb-2">ЦЕНТР ЦИФРОВОГО КОМФОРТУ</p>
+            <p class="mb-0">© 2026 Всі права захищені. Експертний сервіс.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
 </body>
 </html>
