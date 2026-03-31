@@ -15,54 +15,58 @@
         
         :root {
             --royal-blue: #0066cc;
-            --graphite: #1c1c1e;
+            --soft-gray: #f5f5f7;
             --neon-blue: #00d4ff;
+            --apple-text: #1d1d1f;
         }
 
         body {
             font-family: 'SF Pro Display', -apple-system, sans-serif;
-            background-color: #0a0a0c;
-            color: #ffffff;
+            background-color: #ffffff;
+            color: var(--apple-text);
             scroll-behavior: smooth;
         }
 
         .glass-card {
-            background: rgba(28, 28, 30, 0.6);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(0, 102, 204, 0.2);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 102, 204, 0.1);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .glass-card:hover {
-            background: rgba(0, 102, 204, 0.1);
             transform: translateY(-8px);
-            border-color: var(--neon-blue);
-            box-shadow: 0 10px 30px -10px rgba(0, 102, 204, 0.3);
+            border-color: var(--royal-blue);
+            box-shadow: 0 12px 40px rgba(0, 102, 204, 0.12);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, #f0f7ff 0%, #ffffff 100%);
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, #ffffff 0%, var(--neon-blue) 100%);
+            background: linear-gradient(135deg, var(--apple-text) 0%, var(--royal-blue) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .modal-blur {
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            background: rgba(10, 10, 12, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.8);
         }
 
         .btn-glow {
             background: var(--royal-blue);
-            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+            color: white;
             transition: all 0.3s ease;
         }
 
         .btn-glow:hover {
-            background: var(--neon-blue);
-            box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
-            color: #000;
+            background: var(--apple-text);
+            transform: scale(1.02);
         }
 
         @media (max-width: 640px) {
@@ -72,58 +76,57 @@
 </head>
 <body class="overflow-x-hidden">
 
-    <nav class="fixed w-full z-[100] px-6 py-4 flex justify-between items-center bg-[#0a0a0c]/80 backdrop-blur-md border-b border-blue-900/30">
+    <nav class="fixed w-full z-[100] px-6 py-4 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div class="text-xl font-extrabold tracking-tighter uppercase">
-            Центр <span class="text-[#00d4ff]">Цифрового</span> Комфорту
+            Центр <span class="text-[#0066cc]">Цифрового</span> Комфорту
         </div>
-        <div class="text-[10px] uppercase tracking-widest font-bold border border-[#00d4ff] text-[#00d4ff] px-3 py-1 rounded-full">Корпоративна Модель</div>
+        <div class="text-[10px] uppercase tracking-widest font-bold border border-[#0066cc] text-[#0066cc] px-3 py-1 rounded-full">Корпоративна Модель</div>
     </nav>
 
-    <section class="relative min-h-screen flex flex-col justify-center items-center px-6 text-center pt-20 overflow-hidden">
-        <div class="absolute w-[600px] h-[600px] bg-[#0066cc] opacity-10 blur-[180px] -z-10 rounded-full"></div>
-        
+    <section class="relative min-h-screen flex flex-col justify-center items-center px-6 text-center pt-20 hero-gradient">
         <div data-aos="fade-up" data-aos-duration="1200">
             <h1 class="hero-title text-5xl md:text-8xl font-extrabold tracking-tighter mb-8 gradient-text">
                 Еволюція <br>Цифрового Сервісу
             </h1>
-            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">
+            <p class="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto mb-12">
                 Стратегія розвитку мережі від 1 до 60 точок. <br>Висока маржинальність через власні ІТ-рішення та Messi VPN.
             </p>
+            <div class="w-full max-w-4xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
         </div>
     </section>
 
     <section id="finance" class="py-24 px-6 max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold mb-16 text-center tracking-tight uppercase">Фінансові показники</h2>
+        <h2 class="text-3xl font-bold mb-16 text-center tracking-tight uppercase text-gray-400">Етапи зростання</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             <div onclick="openModal('month1')" class="glass-card p-8 rounded-[40px] cursor-pointer relative overflow-hidden group">
-                <div class="absolute top-0 right-0 p-6 text-3xl opacity-10 text-[#00d4ff] group-hover:opacity-100 transition-opacity">01</div>
-                <h3 class="text-[#00d4ff] font-bold uppercase tracking-widest text-xs mb-4">Старт та окупність</h3>
-                <div class="text-4xl font-extrabold mb-2">114 350 ₴</div>
-                <p class="text-gray-400 text-sm mb-6">Чистий прибуток за 1-й місяць</p>
-                <div class="flex items-center text-[#00d4ff] font-semibold gap-2">
-                    Аналітика <i class="bi bi-arrow-right"></i>
+                <div class="absolute top-0 right-0 p-6 text-3xl opacity-5 text-[#0066cc] group-hover:opacity-100 transition-opacity">01</div>
+                <h3 class="text-[#0066cc] font-bold uppercase tracking-widest text-xs mb-4">Старт та окупність</h3>
+                <div class="text-4xl font-extrabold mb-2 text-gray-900">114 350 ₴</div>
+                <p class="text-gray-500 text-sm mb-6">Чистий прибуток за 1-й місяць</p>
+                <div class="flex items-center text-[#0066cc] font-semibold gap-2">
+                    Дивитись розрахунок <i class="bi bi-arrow-right"></i>
                 </div>
             </div>
 
-            <div onclick="openModal('year1')" class="glass-card p-8 rounded-[40px] cursor-pointer relative overflow-hidden group border-[#00d4ff]/30">
-                <div class="absolute top-0 right-0 p-6 text-3xl opacity-10 text-[#00d4ff] group-hover:opacity-100 transition-opacity">02</div>
-                <h3 class="text-[#00d4ff] font-bold uppercase tracking-widest text-xs mb-4">Річний цикл</h3>
-                <div class="text-4xl font-extrabold mb-2">1.91 млн ₴</div>
-                <p class="text-gray-400 text-sm mb-6">EBITDA з однієї локації</p>
-                <div class="flex items-center text-[#00d4ff] font-semibold gap-2">
-                    Структура доходу <i class="bi bi-arrow-right"></i>
+            <div onclick="openModal('year1')" class="glass-card p-8 rounded-[40px] cursor-pointer relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-6 text-3xl opacity-5 text-[#0066cc] group-hover:opacity-100 transition-opacity">02</div>
+                <h3 class="text-[#0066cc] font-bold uppercase tracking-widest text-xs mb-4">Річний цикл</h3>
+                <div class="text-4xl font-extrabold mb-2 text-gray-900">1.91 млн ₴</div>
+                <p class="text-gray-500 text-sm mb-6">EBITDA з однієї локації</p>
+                <div class="flex items-center text-[#0066cc] font-semibold gap-2">
+                    Структура прибутку <i class="bi bi-arrow-right"></i>
                 </div>
             </div>
 
-            <div onclick="openModal('year5')" class="glass-card p-8 rounded-[40px] cursor-pointer relative overflow-hidden group">
-                <div class="absolute top-0 right-0 p-6 text-3xl opacity-10 text-[#00d4ff] group-hover:opacity-100 transition-opacity">03</div>
-                <h3 class="text-[#00d4ff] font-bold uppercase tracking-widest text-xs mb-4">Мережа 60 точок</h3>
-                <div class="text-4xl font-extrabold mb-2">85+ млн ₴</div>
-                <p class="text-gray-400 text-sm mb-6">Річний прибуток холдингу</p>
-                <div class="flex items-center text-[#00d4ff] font-semibold gap-2">
-                    LTV прогноз <i class="bi bi-arrow-right"></i>
+            <div onclick="openModal('year5')" class="glass-card p-8 rounded-[40px] cursor-pointer relative overflow-hidden group bg-blue-50/50">
+                <div class="absolute top-0 right-0 p-6 text-3xl opacity-5 text-[#0066cc] group-hover:opacity-100 transition-opacity">03</div>
+                <h3 class="text-[#0066cc] font-bold uppercase tracking-widest text-xs mb-4">Мережа 60 точок</h3>
+                <div class="text-4xl font-extrabold mb-2 text-gray-900">85+ млн ₴</div>
+                <p class="text-gray-500 text-sm mb-6">Річний прибуток мережі</p>
+                <div class="flex items-center text-[#0066cc] font-semibold gap-2">
+                    Прогноз масштабування <i class="bi bi-arrow-right"></i>
                 </div>
             </div>
 
@@ -131,8 +134,8 @@
     </section>
 
     <div id="modalOverlay" class="fixed inset-0 z-[200] hidden modal-blur flex items-center justify-center p-4">
-        <div class="glass-card w-full max-w-2xl max-h-[90vh] overflow-y-auto p-8 relative rounded-[40px] border border-[#00d4ff]/20">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-3xl text-[#00d4ff] hover:text-white transition">
+        <div class="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto p-8 relative rounded-[40px] shadow-2xl border border-gray-100">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-3xl text-gray-300 hover:text-[#0066cc] transition">
                 <i class="bi bi-x-circle"></i>
             </button>
             <div id="modalContent"></div>
@@ -140,15 +143,15 @@
     </div>
 
     <section class="py-24 px-6 max-w-5xl mx-auto">
-        <div class="glass-card p-10 rounded-[50px]">
-            <h3 class="text-2xl font-bold mb-8 text-center uppercase tracking-tight">Ріст капіталізації</h3>
+        <div class="glass-card p-10 rounded-[50px] bg-white">
+            <h3 class="text-2xl font-bold mb-8 text-center text-gray-900">Капіталізація бізнесу</h3>
             <canvas id="mainChart"></canvas>
         </div>
     </section>
 
-    <footer class="py-20 text-center border-t border-blue-900/20">
-        <div class="text-gray-600 text-xs uppercase tracking-[0.4em] font-bold">
-            &copy; 2026 Center of Digital Comfort | <span class="text-[#00d4ff]">Corporate Strategy</span>
+    <footer class="py-20 text-center border-t border-gray-100">
+        <div class="text-gray-400 text-xs uppercase tracking-[0.4em] font-bold">
+            &copy; 2026 Center of Digital Comfort | <span class="text-[#0066cc]">Light Experience</span>
         </div>
     </footer>
 
@@ -162,62 +165,61 @@
                 content: `
                     <div class="space-y-6">
                         <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-blue-900/20 p-4 rounded-2xl border border-blue-800/30">
-                                <span class="text-[10px] text-gray-400 uppercase font-bold">Дохід</span>
-                                <div class="text-xl font-bold text-[#00d4ff]">172 350 ₴</div>
+                            <div class="bg-blue-50 p-6 rounded-2xl">
+                                <span class="text-[10px] text-blue-600 uppercase font-bold">Чистий дохід</span>
+                                <div class="text-2xl font-bold text-gray-900">172 350 ₴</div>
                             </div>
-                            <div class="bg-red-900/10 p-4 rounded-2xl border border-red-800/20">
-                                <span class="text-[10px] text-gray-400 uppercase font-bold">Витрати</span>
-                                <div class="text-xl font-bold text-red-400">-58 000 ₴</div>
+                            <div class="bg-gray-50 p-6 rounded-2xl">
+                                <span class="text-[10px] text-gray-400 uppercase font-bold">Витрати (OPEX)</span>
+                                <div class="text-2xl font-bold text-red-500">-58 000 ₴</div>
                             </div>
                         </div>
-                        <h4 class="font-bold text-[#00d4ff] uppercase text-xs tracking-widest">Операційні витрати (OPEX):</h4>
-                        <ul class="space-y-3 text-sm text-gray-300">
-                            <li class="flex justify-between border-b border-white/5 pb-2"><span>Оренда ТЦ:</span> <span class="font-bold text-white">20 000 ₴</span></li>
-                            <li class="flex justify-between border-b border-white/5 pb-2"><span>ФОП Майстра (ставка + %):</span> <span class="font-bold text-white">30 000 ₴</span></li>
-                            <li class="flex justify-between border-b border-white/5 pb-2"><span>Маркетинг та податки:</span> <span class="font-bold text-white">8 000 ₴</span></li>
+                        <h4 class="font-bold text-gray-900 uppercase text-xs tracking-widest border-b pb-2">Деталі витрат:</h4>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex justify-between"><span>Оренда торгової площі:</span> <span class="font-bold text-gray-900">20 000 ₴</span></li>
+                            <li class="flex justify-between"><span>ФОП Майстра (ставка + %):</span> <span class="font-bold text-gray-900">30 000 ₴</span></li>
+                            <li class="flex justify-between"><span>Маркетинг та податки:</span> <span class="font-bold text-gray-900">8 000 ₴</span></li>
                         </ul>
-                        <div class="p-4 border-l-4 border-[#00d4ff] bg-blue-950/30">
-                            <p class="text-sm italic text-gray-300">"ROI: Повна окупність інвестицій ($3000) досягається за 1.2 місяці активної роботи."</p>
+                        <div class="p-6 rounded-2xl bg-[#0066cc] text-white">
+                            <p class="text-sm">Повна окупність інвестицій ($3000) досягається за 35-40 днів роботи точки.</p>
                         </div>
                     </div>
                 `
             },
             year1: {
-                title: "Річна структура (1 точка)",
+                title: "Річні показники (1 точка)",
                 content: `
                     <div class="space-y-6">
-                        <div class="text-center bg-[#0066cc]/20 p-6 rounded-3xl border border-[#00d4ff]/30">
-                            <span class="text-[10px] uppercase font-bold tracking-widest text-gray-400">Чистий річний залишок</span>
-                            <div class="text-4xl font-black text-[#00d4ff]">1 372 200 ₴</div>
+                        <div class="text-center bg-blue-50 p-8 rounded-3xl border border-blue-100">
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-blue-600">EBITDA Рік</span>
+                            <div class="text-5xl font-black text-gray-900">1 372 200 ₴</div>
                         </div>
-                        <h4 class="font-bold text-xs uppercase tracking-widest">Розподіл по продуктах:</h4>
-                        <div class="grid grid-cols-1 gap-3 text-sm">
-                            <div class="flex justify-between p-4 glass-card rounded-xl"><span>IPTV (Smart TV):</span> <span class="font-bold text-[#00d4ff]">1.17 млн ₴</span></div>
-                            <div class="flex justify-between p-4 glass-card rounded-xl"><span>Messi VPN (власна маржа):</span> <span class="font-bold text-[#00d4ff]">0.89 млн ₴</span></div>
-                            <div class="flex justify-between p-4 glass-card rounded-xl"><span>Смартфони та Пк:</span> <span class="font-bold text-[#00d4ff]">0.54 млн ₴</span></div>
+                        <h4 class="font-bold text-xs uppercase tracking-widest text-gray-400">Частка послуг у доході:</h4>
+                        <div class="grid grid-cols-1 gap-3 text-sm text-gray-700">
+                            <div class="flex justify-between p-4 bg-gray-50 rounded-xl"><span>Smart TV / IPTV:</span> <span class="font-bold">1.17 млн ₴</span></div>
+                            <div class="flex justify-between p-4 bg-gray-50 rounded-xl"><span>Messi VPN:</span> <span class="font-bold">0.89 млн ₴</span></div>
+                            <div class="flex justify-between p-4 bg-gray-50 rounded-xl"><span>Сервіс смартфонів:</span> <span class="font-bold">0.54 млн ₴</span></div>
                         </div>
-                        <p class="text-[10px] text-gray-500 uppercase font-medium">Враховано закупівлю IPTV плейлистів (60 ₴/міс) та Churn Rate 15%.</p>
                     </div>
                 `
             },
             year5: {
-                title: "Екосистема 5 років",
+                title: "Прогноз на 60 точок",
                 content: `
-                    <div class="space-y-6">
+                    <div class="space-y-6 text-gray-700">
                         <div class="flex items-center gap-6">
-                            <div class="text-6xl font-black text-[#00d4ff]">60</div>
-                            <div class="text-xs font-bold uppercase tracking-widest leading-relaxed">Діючих локацій <br>в мережі</div>
+                            <div class="text-7xl font-black text-[#0066cc]">60</div>
+                            <div class="text-sm font-bold uppercase tracking-widest leading-relaxed">Діючих <br>локацій</div>
                         </div>
-                        <p class="text-gray-300 text-sm leading-relaxed">На 5-й рік основний прибуток формується за рахунок накопиченої бази абонентів.</p>
+                        <p class="text-sm">Масштабування на всю територію України з фокусом на пасивний дохід від підписок.</p>
                         <div class="space-y-4">
-                            <div class="bg-blue-900/20 p-5 rounded-2xl border border-[#00d4ff]/20">
-                                <h5 class="text-[10px] text-[#00d4ff] uppercase font-bold mb-2">Активна база підписок</h5>
-                                <div class="text-2xl font-bold">120 000+ користувачів</div>
+                            <div class="bg-gray-900 text-white p-6 rounded-2xl">
+                                <h5 class="text-[10px] text-blue-400 uppercase font-bold mb-2">Активна база абонентів</h5>
+                                <div class="text-3xl font-bold">120 000+ людей</div>
                             </div>
-                            <div class="bg-green-900/10 p-5 rounded-2xl border border-green-800/20">
-                                <h5 class="text-[10px] text-green-400 uppercase font-bold mb-2">EBITDA Мережі</h5>
-                                <div class="text-2xl font-bold">85 000 000 ₴+</div>
+                            <div class="bg-blue-600 text-white p-6 rounded-2xl shadow-xl">
+                                <h5 class="text-[10px] opacity-80 uppercase font-bold mb-2">Чистий річний прибуток</h5>
+                                <div class="text-3xl font-bold">85 000 000 ₴+</div>
                             </div>
                         </div>
                     </div>
@@ -228,7 +230,7 @@
         function openModal(id) {
             const content = data[id];
             document.getElementById('modalContent').innerHTML = `
-                <h2 class="text-3xl font-bold mb-8 pr-8 uppercase tracking-tighter">${content.title}</h2>
+                <h2 class="text-3xl font-bold mb-8 pr-8 tracking-tighter text-gray-900">${content.title}</h2>
                 ${content.content}
             `;
             document.getElementById('modalOverlay').classList.remove('hidden');
@@ -249,22 +251,22 @@
                 datasets: [{
                     label: 'Прибуток (млн ₴)',
                     data: [0.11, 1.3, 32, 85],
-                    borderColor: '#00d4ff',
+                    borderColor: '#0066cc',
                     borderWidth: 4,
-                    pointBackgroundColor: '#ffffff',
-                    pointBorderColor: '#0066cc',
+                    pointBackgroundColor: '#0066cc',
+                    pointBorderColor: '#fff',
                     pointRadius: 6,
                     tension: 0.4,
                     fill: true,
-                    backgroundColor: 'rgba(0, 102, 204, 0.15)'
+                    backgroundColor: 'rgba(0, 102, 204, 0.05)'
                 }]
             },
             options: {
                 responsive: true,
                 plugins: { legend: { display: false } },
                 scales: {
-                    y: { ticks: { color: '#666', font: { weight: 'bold' } }, grid: { color: 'rgba(255,255,255,0.03)' } },
-                    x: { ticks: { color: '#666', font: { weight: 'bold' } }, grid: { display: false } }
+                    y: { ticks: { color: '#888' }, grid: { color: '#f0f0f0' } },
+                    x: { ticks: { color: '#888' }, grid: { display: false } }
                 }
             }
         });
