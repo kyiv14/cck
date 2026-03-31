@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Центр Цифрового Комфорту | Налаштування гаджетів за 15 хвилин</title>
+    
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2092/2092663.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --royal-blue: #002366;
+            --electric-cyan: #00E5FF;
+            --graphite: #2C2C2C;
+            --cloud-white: #F8F9FA;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cloud-white);
+            color: var(--graphite);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Customization */
+        .navbar {
+            background: rgba(0, 35, 102, 0.95) !important;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--royal-blue) 0%, #001233 100%);
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            padding-top: 100px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to bottom right, transparent 49.5%, var(--cloud-white) 50%);
+        }
+
+        .tagline {
+            color: var(--electric-cyan);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+        }
+
+        .btn-cyan {
+            background-color: var(--electric-cyan);
+            color: var(--royal-blue);
+            font-weight: 700;
+            border-radius: 50px;
+            padding: 15px 35px;
+            transition: 0.3s all ease;
+            border: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn-cyan:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,229,255,0.4);
+            color: var(--royal-blue);
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: white;
+            border: none;
+            border-radius: 25px;
+            padding: 40px 30px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,35,102,0.12);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 35, 102, 0.04);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--royal-blue);
+            margin-bottom: 25px;
+        }
+
+        .price-badge {
+            background: var(--royal-blue);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        /* Location Section */
+        .location-item {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--electric-cyan);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .map-placeholder {
+            border-radius: 30px;
+            height: 100%;
+            min-height: 400px;
+            background: #e9ecef url('https://img.freepik.com/free-vector/map-pointer-location-icon-marker-symbol-gps-direction-web-navigation-concept-abstract-background-3d-map-pin-points_3482-8418.jpg') center/cover;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        footer {
+            background: var(--graphite);
+            color: white;
+            padding: 80px 0 40px;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--electric-cyan);
+            color: var(--royal-blue);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .display-3 { font-size: 2.5rem; }
+            .hero { text-align: center; padding-top: 120px; }
+            .hero .d-flex { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="bi bi-cpu-fill me-2 text-info"></i>
+                ЦЕНТР ЦИФРОВОГО КОМФОРТУ
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link px-3" href="#services">Послуги</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#locations">Локації</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#mission">Місія</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a class="btn btn-cyan btn-sm shadow-sm" href="https://t.me/your_telegram_bot">Консультація</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <p class="tagline mb-3">Технології, що служать вам</p>
+                    <h1 class="display-3 fw-bold mb-4">Повертаємо затишок у ваш цифровий світ</h1>
+                    <p class="lead mb-5 opacity-75 fs-4">Налаштування смартфонів, TV та Wi-Fi за 15 хвилин. Поки ви купуєте продукти — ми робимо техніку слухняною.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#services" class="btn btn-cyan shadow">Переглянути послуги</a>
+                        <a href="#locations" class="btn btn-outline-light btn-lg rounded-pill px-4 border-2">Наші точки</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="text-center">
+                        <i class="bi bi-shield-lock-fill" style="font-size: 18rem; color: var(--electric-cyan); opacity: 0.3; filter: drop-shadow(0 0 20px var(--electric-cyan));"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold text-uppercase">Наші можливості</h6>
+                <h2 class="display-5 fw-bold">Що ми робимо найкраще</h2>
+                <div class="mx-auto bg-info" style="height: 4px; width: 60px; border-radius: 2px;"></div>
+            </div>
+            <div class="row g-4 pt-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="icon-box"><i class="bi bi-phone-vibrate"></i></div>
+                        <h4 class="fw-bold">Смартфони</h4>
+                        <p class="text-muted small">Перенос даних, налаштування Apple ID/Google, захист та оптимізація.</p>
+                        <div class="price-badge">від 300 грн</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="icon-box"><i class="bi bi-tv"></i></div>
+                        <h4 class="fw-bold">Smart TV</h4>
+                        <p class="text-muted small">Встановлення IPTV, налаштування YouTube без реклами та кінотеатрів.</p>
+                        <div class="price-badge">від 500 грн</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="icon-box"><i class="bi bi-router"></i></div>
+                        <h4 class="fw-bold">Інтернет</h4>
+                        <p class="text-muted small">Налаштування VPN на роутер, Mesh-системи та прискорення Wi-Fi.</p>
+                        <div class="price-badge">від 400 грн</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="icon-box"><i class="bi bi-laptop"></i></div>
+                        <h4 class="fw-bold">Windows</h4>
+                        <p class="text-muted small">Встановлення ОС, драйверів та софту. Чистка ноутбука від сміття.</p>
+                        <div class="price-badge">від 600 грн</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mission" class="py-5 bg-white shadow-sm" style="border-radius: 50px 50px 0 0;">
+        <div class="container py-5 text-center">
+            <h3 class="fw-bold mb-4">Наша Місія</h3>
+            <p class="lead mx-auto mb-0" style="max-width: 800px;">
+                "Ми робимо складні технології простими та доступними для кожного, перетворюючи цифровий стрес на задоволення від використання техніки."
+            </p>
+        </div>
+    </section>
+
+    <section id="locations" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row align-items-stretch">
+                <div class="col-lg-5 pe-lg-5 mb-5 mb-lg-0">
+                    <h2 class="display-6 fw-bold mb-5">Чекаємо на вас у зручних місцях</h2>
+                    
+                    <div class="location-item">
+                        <h5 class="fw-bold mb-1"><i class="bi bi-geo-alt-fill text-info me-2"></i> МегаМаркет (Нивки)</h5>
+                        <p class="text-muted small mb-3">вул. Данила Щербаківського, 58</p>
+                        <div class="d-flex align-items-center">
+                            <span class="badge bg-success rounded-pill px-3 py-2 me-2">Зараз вільно</span>
+                            <span class="small text-muted">10:00 - 21:00</span>
+                        </div>
+                    </div>
+
+                    <div class="location-item" style="border-left-color: #dee2e6;">
+                        <h5 class="fw-bold mb-1"><i class="bi bi-geo-alt-fill text-secondary me-2"></i> ТРЦ Retroville</h5>
+                        <p class="text-muted small mb-3">просп. Правди, 47 (біля фудкорту)</p>
+                        <div class="d-flex align-items-center">
+                            <span class="badge bg-warning text-dark rounded-pill px-3 py-2 me-2">Черга: 1 людина</span>
+                            <span class="small text-muted">10:00 - 22:00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="map-placeholder d-flex align-items-end p-4">
+                        <div class="bg-white p-3 rounded-4 shadow-lg w-100" style="backdrop-filter: blur(5px); background: rgba(255,255,255,0.9);">
+                            <p class="mb-0 fw-bold"><i class="bi bi-info-circle-fill text-primary me-2"></i> Скоро: Інтерактивна карта з відстеженням черги онлайн!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3">ЦЕНТР ЦИФРОВОГО КОМФОРТУ</h2>
+            <p class="opacity-75 mb-5 fs-5">Технології, що служать вам</p>
+            
+            <div class="d-flex justify-content-center gap-3 mb-5">
+                <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="social-link"><i class="bi bi-telegram"></i></a>
+                <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+            </div>
+
+            <div class="mx-auto opacity-25 bg-white mb-4" style="height: 1px; width: 100%; max-width: 400px;"></div>
+            
+            <p class="small opacity-50 mb-0">
+                &copy; 2026 Мережа сервісів цифрового комфорту. Всі права захищені.<br>
+                Зроблено з турботою про ваш спокій.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
