@@ -1,223 +1,188 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoftC Company - Системные решения</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>SoftC Company | Solutions That Drive Growth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-blue: #2563eb;
-            --light-blue: #eff6ff;
-            --text-dark: #1f2937;
-            --text-gray: #6b7280;
-            --bg-gradient: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-dark);
-            background: var(--bg-gradient);
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-            background: white;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 24px;
-            color: var(--text-dark);
-        }
-
-        .logo span { color: var(--primary-blue); }
-
-        .nav-links a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: var(--text-gray);
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover { color: var(--primary-blue); }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 80px 10%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero-content { flex: 1; }
-
-        .hero-content h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-
-        .hero-content h1 span { color: var(--primary-blue); }
-
-        .hero-content p {
-            color: var(--text-gray);
-            font-size: 18px;
-            margin-bottom: 30px;
-            max-width: 500px;
-        }
-
-        .badge {
-            background: #dcfce7;
-            color: #166534;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: var(--primary-blue);
-            color: white;
-            margin-right: 15px;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn-secondary {
-            border: 1px solid #e5e7eb;
-            color: var(--text-dark);
-        }
-
-        .hero-image {
-            flex: 1;
-            text-align: right;
-        }
-
-        .hero-image img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 30px;
-        }
-
-        /* Features Section */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 50px 10%;
-            background: #f8fafc;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: left;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover { transform: translateY(-5px); }
-
-        .feature-card h3 {
-            font-size: 18px;
-            margin: 15px 0 10px;
-        }
-
-        .feature-card p {
-            font-size: 14px;
-            color: var(--text-gray);
-        }
-
-        .icon-box {
-            width: 40px;
-            height: 40px;
-            background: var(--light-blue);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-blue);
-        }
-
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; }
-            .hero-content p { margin: 0 auto 30px; }
-            .hero-image { margin-top: 50px; }
-            .nav-links { display: none; }
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #fcfcfd; color: #1f2937; }
+        .hero-gradient { background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%); }
+        .blue-card { background: #f0f7ff; border-radius: 24px; }
+        .btn-blue { background-color: #6366f1; color: white; transition: all 0.3s; }
+        .btn-blue:hover { background-color: #4f46e5; transform: translateY(-2px); }
+        .btn-green { background-color: #10b981; color: white; }
+        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+        .pricing-badge { background: #dbeafe; color: #1e40af; font-weight: 600; padding: 2px 12px; border-radius: 12px; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Soft<span>C</span> Company</div>
-        <div class="nav-links">
-            <a href="#">О нас</a>
-            <a href="#">Услуги</a>
-            <a href="#">Проекты</a>
-            <a href="#">Контакты</a>
+    <header class="flex justify-between items-center px-6 py-4 bg-white sticky top-0 z-50 shadow-sm">
+        <div class="text-2xl font-bold flex items-center">
+            Soft<span class="text-indigo-500">C</span> Company
         </div>
-    </nav>
+        <button class="text-3xl">☰</button>
+    </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="badge">150+ ПРОЕКТОВ • 24/7 ПОДДЕРЖКА</div>
-            <h1>Решения, которые ускоряют <span>Рост</span></h1>
-            <p>Мы создаем масштабируемые цифровые решения, которые помогают компаниям внедрять инновации и расти быстрее.</p>
-            <div class="hero-buttons">
-                <a href="#" class="btn btn-primary">Начать работу</a>
-                <a href="#" class="btn btn-secondary">Подробнее</a>
+    <section class="hero-gradient px-6 pt-16 pb-10 text-center">
+        <h1 class="text-5xl font-bold leading-tight mb-4">
+            Solutions<br>That Drive<br><span class="text-indigo-500">Growth</span>
+        </h1>
+        <p class="text-gray-500 text-lg mb-8">Empowering your business through smart technology.</p>
+        
+        <div class="bg-green-100 text-green-700 inline-block px-4 py-2 rounded-full font-bold text-sm mb-10 uppercase tracking-wider">
+            ● 150+ Projects ● 24/7 Support ● 500K+ Happy Users
+        </div>
+
+        <div class="flex gap-4 justify-center mb-12">
+            <button class="btn-blue px-8 py-4 rounded-2xl font-semibold shadow-lg shadow-indigo-200">Get Started</button>
+            <button class="border-2 border-gray-200 px-8 py-4 rounded-2xl font-semibold">Learn More</button>
+        </div>
+
+        <div class="relative max-w-sm mx-auto">
+            <img src="https://via.placeholder.com/400x300/e0e7ff/4f46e5?text=Developer+3D+Icon" alt="Hero" class="rounded-3xl mx-auto">
+        </div>
+    </section>
+
+    <section class="px-6 py-16 space-y-6">
+        <div class="blue-card p-10 text-center card-shadow">
+            <div class="text-4xl mb-4">💬</div>
+            <h3 class="text-2xl font-bold mb-2">Responsibility</h3>
+            <p class="text-gray-500">We take every step to ensure top-quality results.</p>
+        </div>
+        <div class="blue-card p-10 text-center card-shadow">
+            <div class="text-4xl mb-4">🔔</div>
+            <h3 class="text-2xl font-bold mb-2">Professionalism</h3>
+            <p class="text-gray-500">Our expert work backed by clear communication.</p>
+        </div>
+        <div class="blue-card p-10 text-center card-shadow">
+            <div class="text-4xl mb-4">📋</div>
+            <h3 class="text-2xl font-bold mb-2">Communication</h3>
+            <p class="text-gray-500">We stay open, responsive, and transparent.</p>
+        </div>
+    </section>
+
+    <section class="mx-6 my-10 bg-indigo-400 rounded-[40px] p-10 text-center text-white">
+        <p class="uppercase text-xs font-bold tracking-widest mb-4">- DO NOT MISS YOUR LIMITED OFFER -</p>
+        <h2 class="text-4xl font-bold mb-6">Get 20% Off Today — Just for You!</h2>
+        <ul class="text-sm flex flex-wrap justify-center gap-x-4 gap-y-2 opacity-90 mb-8">
+            <li>FAST & EASY SETUP</li>
+            <li>NO HIDDEN FEES</li>
+            <li>FLEXIBLE PLANS</li>
+            <li>SECURE & RELIABLE</li>
+        </ul>
+        <div class="flex gap-4 justify-center">
+            <button class="btn-green px-8 py-3 rounded-2xl font-bold">Get Started</button>
+            <button class="border border-white px-8 py-3 rounded-2xl font-bold">Learn More</button>
+        </div>
+    </section>
+
+    <section class="px-6 py-16">
+        <h2 class="text-3xl font-bold text-center mb-4">Check Out Services We Provide</h2>
+        <p class="text-center text-gray-500 mb-12">Explore our core solutions built to power your digital transformation.</p>
+
+        <div class="space-y-8">
+            <div class="bg-white p-8 rounded-[32px] border border-gray-100 card-shadow text-center">
+                <img src="https://via.placeholder.com/200x150/f0f7ff/6366f1?text=Web+Portals" class="mx-auto mb-6">
+                <h3 class="text-xl font-bold mb-4">Web Portals</h3>
+                <p class="text-gray-500 mb-4">Engaging, scalable web platforms to connect users.</p>
+                <span class="pricing-badge">- from $79 -</span>
+            </div>
+            <div class="bg-white p-8 rounded-[32px] border border-gray-100 card-shadow text-center">
+                <img src="https://via.placeholder.com/200x150/f0f7ff/6366f1?text=SharePoint" class="mx-auto mb-6">
+                <h3 class="text-xl font-bold mb-4">SharePoint</h3>
+                <p class="text-gray-500 mb-4">Optimize collaboration and document management.</p>
+                <span class="pricing-badge">- from $109 -</span>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="https://img.freepik.com/free-vector/floating-robot-abstract-background_23-2148247413.jpg" alt="3D Illustration">
+    </section>
+
+    <section class="px-6 py-16 bg-white">
+        <h2 class="text-3xl font-bold mb-4">Look Through Our Process</h2>
+        <p class="text-gray-500 mb-10">A simple, transparent workflow designed to turn ideas into results.</p>
+        
+        <div class="space-y-12">
+            <div class="flex gap-6">
+                <div class="text-4xl font-bold text-indigo-200">01</div>
+                <div>
+                    <h4 class="text-xl font-bold">Contact Us</h4>
+                    <p class="text-gray-500">Reach out with your business challenge — our team will guide you.</p>
+                </div>
+            </div>
+            <div class="flex gap-6">
+                <div class="text-4xl font-bold text-indigo-200">02</div>
+                <div>
+                    <h4 class="text-xl font-bold">Project Analysis</h4>
+                    <p class="text-gray-500">We'll review your goals and define a clear, effective plan.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="features">
-        <div class="feature-card">
-            <div class="icon-box">★</div>
-            <h3>Ответственность</h3>
-            <p>Мы гарантируем высокое качество на каждом этапе разработки.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon-box">👤</div>
-            <h3>Профессионализм</h3>
-            <p>Наша команда экспертов всегда на связи с вами.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon-box">⚡</div>
-            <h3>Эффективность</h3>
-            <p>Agile-методы позволяют нам сдавать проекты точно в срок.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon-box">🌐</div>
-            <h3>Коммуникация</h3>
-            <p>Прозрачность и открытость в общении с клиентом.</p>
+    <section class="px-6 py-16 bg-gray-50">
+        <h2 class="text-3xl font-bold text-center mb-10">What We've Built So Far</h2>
+        <div class="space-y-10">
+            <div class="text-center">
+                <img src="https://via.placeholder.com/400x300/e0e7ff/6366f1?text=Trauma+Training+App" class="rounded-3xl mb-6 mx-auto">
+                <p class="text-xs font-bold text-gray-400 mb-2 uppercase">UX Design</p>
+                <h3 class="text-2xl font-bold mb-4">Trauma Training App "AnatoVR"</h3>
+                <p class="text-indigo-500 font-semibold">Target Audience: Medical Students</p>
+            </div>
         </div>
     </section>
+
+    <section class="px-6 py-16 text-center">
+        <h2 class="text-3xl font-bold mb-4">Meet Our Experts in Action</h2>
+        <div class="space-y-10 mt-10">
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 card-shadow">
+                <img src="https://via.placeholder.com/150/f0f7ff/4f46e5?text=Andrew" class="mx-auto rounded-full mb-4">
+                <h4 class="text-xl font-bold">Andrew Shimmer</h4>
+                <p class="text-gray-400 italic">QA Engineer</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-6 py-16">
+        <h2 class="text-3xl font-bold text-center mb-10">Real Feedback From Real Users</h2>
+        <div class="bg-indigo-50 p-8 rounded-[32px] card-shadow">
+            <p class="text-gray-600 italic mb-6">"The SoftC team delivered exactly what we needed — a clean, intuitive app that scales. Professional and responsive!"</p>
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-300 rounded-full"></div>
+                <div>
+                    <p class="font-bold">Mark Levitt</p>
+                    <p class="text-xs text-indigo-400">UI/UX Designer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white px-6 py-16">
+        <h2 class="text-2xl font-bold mb-4">SoftC Company</h2>
+        <div class="w-12 h-1 bg-green-500 mb-6"></div>
+        <p class="text-gray-400 mb-8">We go the extra mile to understand your goals & deliver solutions that make a real impact.</p>
+        
+        <div class="flex gap-4 mb-12">
+            <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center">f</div>
+            <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center">ig</div>
+            <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center">yt</div>
+        </div>
+
+        <div class="space-y-4">
+            <h3 class="text-xl font-bold">About Us</h3>
+            <div class="w-12 h-0.5 bg-green-500/30"></div>
+            <ul class="text-gray-400 space-y-2">
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 bg-indigo-500 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl">
+        <span class="text-white text-2xl">💬</span>
+    </div>
 
 </body>
 </html>
