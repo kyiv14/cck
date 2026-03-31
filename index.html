@@ -2,208 +2,279 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Центр Цифрового Комфорту | Експертний сервіс гаджетів</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Центр Цифрового Комфорту | Business Model</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        
         :root {
-            --main-blue: #f0f7ff; 
-            --accent-indigo: #0066cc; 
-            --accent-green: #10b981; 
+            --apple-blue: #0066cc;
+            --apple-dark: #1d1d1f;
+            --glass: rgba(255, 255, 255, 0.7);
         }
 
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #fcfcfd; 
-            color: #1f2937; 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f7;
+            color: var(--apple-dark);
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
-        .blue-card { 
-            background: var(--main-blue); 
-            border-radius: 32px; 
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
         }
 
-        .card-shadow { box-shadow: 0 10px 30px -5px rgba(0, 102, 204, 0.05); }
-        .hero-shadow { box-shadow: 0 20px 40px -10px rgba(0, 102, 204, 0.15); }
+        .hero-gradient {
+            background: radial-gradient(circle at center, #ffffff 0%, #f5f5f7 100%);
+        }
 
-        .btn-interactive {
-            position: relative;
-            overflow: hidden;
+        .btn-apple {
+            background: var(--apple-blue);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 980px;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
-        .btn-interactive:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px -5px rgba(0, 102, 204, 0.3);
+
+        .btn-apple:hover {
+            opacity: 0.8;
+            transform: scale(1.02);
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px -10px rgba(0, 102, 204, 0.1);
-        }
-
-        /* Стилі для плеєра анімацій */
-        lottie-player {
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));
-            transition: transform 0.5s ease;
-            margin: 0 auto;
-        }
-
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-        }
-        .pulse-btn { animation: pulse-green 2s infinite; }
-        
-        #mobile-menu {
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: translateX(100%);
-        }
-        #mobile-menu.active { transform: translateX(0); }
-
-        @media (max-width: 640px) {
-            .hero-title { font-size: 2.5rem !important; line-height: 1.1 !important; }
-        }
+        canvas { max-width: 100% !important; }
     </style>
 </head>
 <body>
 
-    <header class="flex justify-between items-center px-6 py-4 bg-white sticky top-0 z-[100] shadow-sm">
-        <div class="text-xl md:text-2xl font-extrabold flex items-center tracking-tight uppercase cursor-pointer" onclick="window.scrollTo(0,0)">
-            <span class="text-gray-900">Центр</span> 
-            <span class="text-[#0066cc] ml-1">Цифрового</span> 
-            <span class="text-[#0066cc] ml-1">Комфорту</span>
+    <nav class="fixed w-full z-50 glass-card rounded-none border-none py-4 px-6 flex justify-between items-center">
+        <div class="text-xl font-bold tracking-tight uppercase">
+            Центр <span class="text-blue-600">Цифрового</span> Комфорту
         </div>
-        <div class="hidden md:flex gap-8 font-semibold text-gray-600">
-            <a href="#services" class="hover:text-[#0066cc] transition-colors">Послуги</a>
-            <a href="#locations" class="hover:text-[#0066cc] transition-colors">Локації</a>
-            <a href="#process" class="hover:text-[#0066cc] transition-colors">Процес</a>
+        <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="#model" class="hover:text-blue-600 transition">Модель</a>
+            <a href="#services" class="hover:text-blue-600 transition">Послуги</a>
+            <a href="#finance" class="hover:text-blue-600 transition">Фінанси</a>
         </div>
-        <button onclick="toggleMenu()" class="text-3xl text-gray-600 focus:outline-none">
-            <i class="bi bi-list" id="menu-icon"></i>
-        </button>
-    </header>
+    </nav>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-[#0066cc] z-[90] flex flex-col items-center justify-center text-white gap-8 text-2xl font-bold">
-        <a href="#services" onclick="toggleMenu()">Послуги</a>
-        <a href="#locations" onclick="toggleMenu()">Локації</a>
-        <a href="#process" onclick="toggleMenu()">Процес</a>
-        <a href="https://t.me/your_bot" onclick="toggleMenu()" class="bg-white text-[#0066cc] px-8 py-3 rounded-2xl">Консультація</a>
-    </div>
-
-    <section class="relative px-6 pt-12 pb-20 text-center overflow-hidden" style="background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);">
-        <div data-aos="fade-up">
-            <h1 class="hero-title text-4xl md:text-6xl font-extrabold leading-tight mb-4 tracking-tighter">
-                Повертаємо<br>Затишок у Ваш<br><span class="text-[#0066cc] relative">Цифровий Світ</span>
+    <section class="min-h-screen hero-gradient flex flex-col justify-center items-center text-center px-6 pt-20">
+        <div data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">
+                Цифровий спокій <br><span class="text-blue-600">у кожному гаджеті.</span>
             </h1>
-            <p class="text-gray-500 text-base md:text-lg mb-10 max-w-md mx-auto px-4">Професійне налаштування смартфонів, TV та мереж за 15 хвилин.</p>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-10">
+                Ми перетворюємо складні технології на комфорт. Сервісні острівці майбутнього в найкращих ТЦ України.
+            </p>
+            <div class="flex gap-4 justify-center">
+                <a href="#finance" class="btn-apple">Дивитись розрахунки</a>
+            </div>
+        </div>
+        <div class="mt-20 w-full max-w-5xl" data-aos="zoom-in" data-aos-delay="300">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" 
+                 class="rounded-[40px] shadow-2xl border-8 border-white" alt="Business Concept">
+        </div>
+    </section>
+
+    <section id="model" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl font-bold tracking-tight">Бізнес-модель</h2>
         </div>
         
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16 px-6" data-aos="fade-up">
-            <button onclick="document.getElementById('services').scrollIntoView()" class="btn-interactive bg-[#0066cc] text-white px-9 py-4 rounded-2xl font-semibold hero-shadow">Послуги</button>
-            <button onclick="document.getElementById('locations').scrollIntoView()" class="btn-interactive border-2 border-gray-200 bg-white px-9 py-4 rounded-2xl font-semibold text-gray-700">Локації</button>
-        </div>
-
-        <div class="relative max-w-sm mx-auto" data-aos="zoom-in">
-            <lottie-player src="https://lottie.host/8046b0a1-7c91-4475-a0bc-124b82d92631/iAatfOitNq.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
-        </div>
-    </section>
-
-    <section id="services" class="px-6 py-20 bg-white">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-3xl font-bold tracking-tight mb-4">Наші Послуги</h2>
-            <p class="text-gray-500">Повний спектр налаштувань для вашого цифрового життя.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white p-6 rounded-[32px] border border-gray-100 service-card card-shadow text-center" data-aos="fade-up">
-                <div class="mx-auto mb-6 bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center">
-                    <lottie-player src="https://lottie.host/82544252-d336-4c4e-b5f7-6407945d8b88/15Y91C5H8j.json" background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay></lottie-player>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-10 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-6">
+                    <i class="bi bi-geo-alt-fill"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Смартфони</h3>
-                <p class="text-sm text-gray-500 mb-4">Перенос даних, акаунти та безпека.</p>
-                <span class="bg-blue-50 text-[#0066cc] font-bold text-xs px-4 py-1.5 rounded-full">від 300 ₴</span>
-            </div>
-            
-            <div class="bg-white p-6 rounded-[32px] border border-gray-100 service-card card-shadow text-center" data-aos="fade-up" data-aos-delay="100">
-                <div class="mx-auto mb-6 bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center">
-                    <lottie-player src="https://lottie.host/6d9c82a5-484d-4009-847e-75f10255c276/7W2m4G4ZfK.json" background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay></lottie-player>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Smart TV</h3>
-                <p class="text-sm text-gray-500 mb-4">IPTV, YouTube Premium та кінотеатри.</p>
-                <span class="bg-blue-50 text-[#0066cc] font-bold text-xs px-4 py-1.5 rounded-full">від 500 ₴</span>
+                <h3 class="text-xl font-bold mb-4">Локації</h3>
+                <p class="text-gray-500 leading-relaxed text-sm">
+                    Острівці 4-8 м² у ТЦ з високим трафіком (МегаМаркет, Retroville) поблизу продуктових якорів.
+                </p>
             </div>
 
-            <div class="bg-white p-6 rounded-[32px] border border-gray-100 service-card card-shadow text-center" data-aos="fade-up" data-aos-delay="200">
-                <div class="mx-auto mb-6 bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center">
-                    <lottie-player src="https://lottie.host/8682855f-1419-4876-9289-409520935515/8mNl0u2I6U.json" background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay></lottie-player>
+            <div class="glass-card p-10 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl mb-6">
+                    <i class="bi bi-shield-lock-fill"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Wi-Fi & VPN</h3>
-                <p class="text-sm text-gray-500 mb-4">Налаштування роутерів та VPN.</p>
-                <span class="bg-blue-50 text-[#0066cc] font-bold text-xs px-4 py-1.5 rounded-full">від 400 ₴</span>
+                <h3 class="text-xl font-bold mb-4">Продукт</h3>
+                <p class="text-gray-500 leading-relaxed text-sm">
+                    Власний Messi VPN та IPTV. Висока маржа завдяки відсутності посередників у софті.
+                </p>
             </div>
 
-            <div class="bg-white p-6 rounded-[32px] border border-gray-100 service-card card-shadow text-center" data-aos="fade-up" data-aos-delay="300">
-                <div class="mx-auto mb-6 bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center">
-                    <lottie-player src="https://lottie.host/481f349d-3617-4869-8f0a-661706698663/87yM4Hsh5Y.json" background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay></lottie-player>
+            <div class="glass-card p-10 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mb-6">
+                    <i class="bi bi-lightning-charge-fill"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Ноутбуки</h3>
-                <p class="text-sm text-gray-500 mb-4">Встановлення ОС Windows та чистка.</p>
-                <span class="bg-blue-50 text-[#0066cc] font-bold text-xs px-4 py-1.5 rounded-full">від 600 ₴</span>
+                <h3 class="text-xl font-bold mb-4">Економіка</h3>
+                <p class="text-gray-500 leading-relaxed text-sm">
+                    Окупність точки за 1-2 місяці. Рентабельність понад 70% за рахунок інтелектуальних послуг.
+                </p>
             </div>
         </div>
     </section>
 
-    <section id="locations" class="px-6 py-20 bg-gray-50">
-        <h2 class="text-3xl font-bold text-center mb-12">Наші локації</h2>
-        <div class="max-w-4xl mx-auto space-y-4">
-            <div class="blue-card p-6 border border-blue-50 card-shadow flex justify-between items-center">
-                <div>
-                    <h4 class="font-bold">МегаМаркет (Нивки)</h4>
-                    <p class="text-sm text-gray-500">вул. Данила Щербаківського, 58</p>
+    <section id="services" class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold tracking-tight">Послуги та Ціни</h2>
+                    <p class="text-gray-500 mt-2">Чесні ціни та прозорий сервіс.</p>
                 </div>
-                <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Вільні місця</span>
             </div>
-            <div class="blue-card p-6 border border-blue-50 card-shadow flex justify-between items-center">
-                <div>
-                    <h4 class="font-bold">ТРЦ Retroville</h4>
-                    <p class="text-sm text-gray-500">просп. Правди, 47</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="border border-gray-100 p-8 rounded-[30px] hover:bg-gray-50 transition">
+                    <h4 class="font-bold text-lg mb-2">Smart TV / IPTV</h4>
+                    <p class="text-blue-600 font-bold mb-4">від 500 ₴</p>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li>● YouTube без реклами</li>
+                        <li>● 1000+ каналів</li>
+                        <li>● Налаштування за 15 хв</li>
+                    </ul>
                 </div>
-                <span class="bg-yellow-100 text-yellow-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Черга: 1 людина</span>
+                <div class="border border-gray-100 p-8 rounded-[30px] hover:bg-gray-50 transition">
+                    <h4 class="font-bold text-lg mb-2">Messi VPN</h4>
+                    <p class="text-blue-600 font-bold mb-4">від 400 ₴</p>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li>● Власна розробка</li>
+                        <li>● Безлімітна швидкість</li>
+                        <li>● Конфіденційність</li>
+                    </ul>
+                </div>
+                <div class="border border-gray-100 p-8 rounded-[30px] hover:bg-gray-50 transition">
+                    <h4 class="font-bold text-lg mb-2">Смартфони</h4>
+                    <p class="text-blue-600 font-bold mb-4">від 300 ₴</p>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li>● Перенос даних</li>
+                        <li>● Apple ID / Google</li>
+                        <li>● Банкінг та безпека</li>
+                    </ul>
+                </div>
+                <div class="border border-gray-100 p-8 rounded-[30px] hover:bg-gray-50 transition">
+                    <h4 class="font-bold text-lg mb-2">Ноутбуки</h4>
+                    <p class="text-blue-600 font-bold mb-4">від 600 ₴</p>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li>● Windows та софт</li>
+                        <li>● Чистка та прискорення</li>
+                        <li>● Видалення вірусів</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-950 text-white px-6 py-16 text-center">
-        <h2 class="text-2xl font-extrabold uppercase mb-4">Центр <span class="text-blue-400">Цифрового</span> <span class="text-blue-400">Комфорту</span></h2>
-        <p class="text-gray-400 text-sm">© 2026 Центр Цифрового Комфорту. Всі права захищені.</p>
+    <section id="finance" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold tracking-tight">Фінансовий прогноз</h2>
+                <p class="text-gray-500 mt-4">Динаміка прибутку з урахуванням LTV та Churn Rate.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="glass-card p-8 shadow-xl" data-aos="fade-right">
+                    <canvas id="growthChart" height="250"></canvas>
+                </div>
+                
+                <div class="space-y-6" data-aos="fade-left">
+                    <div class="flex gap-6 items-start">
+                        <div class="text-blue-600 font-bold text-xl w-24">1 міс.</div>
+                        <div>
+                            <h5 class="font-bold text-lg">Запуск та окупність</h5>
+                            <p class="text-sm text-gray-500">Прибуток: ~159 000 ₴. Точка повністю окупає інвестиції ($3000) вже за перший місяць.</p>
+                        </div>
+                    </div>
+                    <hr class="border-gray-200">
+                    <div class="flex gap-6 items-start">
+                        <div class="text-blue-600 font-bold text-xl w-24">6 міс.</div>
+                        <div>
+                            <h5 class="font-bold text-lg">Стабілізація бази</h5>
+                            <p class="text-sm text-gray-500">Зростання частки абонплат. Формування постійної бази клієнтів IPTV та VPN.</p>
+                        </div>
+                    </div>
+                    <hr class="border-gray-200">
+                    <div class="flex gap-6 items-start">
+                        <div class="text-blue-600 font-bold text-xl w-24">1 рік</div>
+                        <div>
+                            <h5 class="font-bold text-lg">1.9 млн ₴ / рік з точки</h5>
+                            <p class="text-sm text-gray-500">Чистий прибуток після всіх витрат (оренда, зарплати, закупка контенту).</p>
+                        </div>
+                    </div>
+                    <hr class="border-gray-200">
+                    <div class="flex gap-6 items-start">
+                        <div class="text-blue-600 font-bold text-xl w-24">3-5 років</div>
+                        <div>
+                            <h5 class="font-bold text-lg">Масштабування: 60+ точок</h5>
+                            <p class="text-sm text-gray-500">Перехід на пасивний дохід від підписок. Річний прибуток мережі: 80-90 млн ₴.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-16 px-6 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-sm text-gray-400">
+                &copy; 2026 Центр Цифрового Комфорту. Всі права захищені.
+            </div>
+            <div class="flex gap-6 text-xl text-gray-400">
+                <a href="#" class="hover:text-blue-600 transition"><i class="bi bi-telegram"></i></a>
+                <a href="#" class="hover:text-blue-600 transition"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="hover:text-blue-600 transition"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
     </footer>
-
-    <div onclick="window.open('https://t.me/your_bot')" class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-[100] cursor-pointer pulse-btn">
-        <i class="bi bi-telegram text-3xl text-white"></i>
-    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+        AOS.init();
 
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('active');
-            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
-        }
+        // Chart configuration
+        const ctx = document.getElementById('growthChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['1 міс', '6 міс', '1 рік', '3 роки', '5 років'],
+                datasets: [{
+                    label: 'Чистий прибуток мережі (млн ₴)',
+                    data: [0.16, 1.2, 1.9, 28, 85],
+                    borderColor: '#0066cc',
+                    backgroundColor: 'rgba(0, 102, 204, 0.1)',
+                    borderWidth: 4,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#f0f0f0' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
     </script>
 </body>
 </html>
